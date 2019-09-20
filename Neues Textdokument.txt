@@ -1,3 +1,7 @@
 Namen bei denen es funktioniert:
 Paul
+<<<<<<< HEAD
 Anton
+=======
+Jan
+>>>>>>> 051e5d273f612d960c9124600744a0a312a07837
