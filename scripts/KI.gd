@@ -13,7 +13,10 @@ func _ready():
 
 func _process(delta):
 	a = pPlayer._get_Position()
-	pEnemy._set_Player_Position(a)
+
+func _give_Player_Position():
+	return a
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
