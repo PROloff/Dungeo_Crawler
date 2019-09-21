@@ -13,6 +13,7 @@ const BULLET = preload("res://scenes/Bullet.tscn")
 
 var rollDirection = Vector2(0,0)
 var rollCounter = 0
+var life = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -81,6 +82,10 @@ func _process(delta):
 		player.stop()
 
 
+func player_hit():
+	life -= 1
+	if life == 0:
+		get_tree().change_scene("res://scenes/Title Screen.tscn")
 
 	
 func _get_Position():
