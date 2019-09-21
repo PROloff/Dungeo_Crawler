@@ -13,7 +13,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var move = Vector2(0,0)
-	
 	if Input.is_action_pressed("down"):
 		move.y = 1
 	if Input.is_action_pressed("up"):
@@ -33,3 +32,6 @@ func _process(delta):
 	else:
 		move_and_slide(move * SPEED)
 	pass
+	
+func _get_Position():
+	return global_position
