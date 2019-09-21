@@ -68,7 +68,7 @@ func _process(delta):
 		bullet._set_playerPosition(position)
 		bullet.position = $Position2D.global_position
 	
-	
+
 	if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right") :
 		if !player.is_playing():
 			player.play()
