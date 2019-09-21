@@ -17,11 +17,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	_set_Player_Position()
 	_calculate_move()
 	move_and_slide(move * SPEED)
 	pass
 
-func _set_Player_Position(pos):
+func _set_Player_Position():
+	var pos = get_parent()._give_Player_Position()
 	PLAYERPOSX = pos.x
 	PLAYERPOSY = pos.y
 	pass
