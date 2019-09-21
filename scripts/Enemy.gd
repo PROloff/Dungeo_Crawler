@@ -3,11 +3,6 @@ extends KinematicBody2D
 var PLAYERPOSX
 var PLAYERPOSY
 var SPEED = 40
-var ROLLSPEED = 1
-var ROLLLENGTH = 60
-var rollDirection = Vector2(0,0)
-var rollCounter = 0
-var RNG = RandomNumberGenerator.new()
 var move = Vector2(0,0)
 var life = 3
 
@@ -30,22 +25,30 @@ func _set_Player_Position():
 
 func _calculate_move():
 	
-	var posX = global_position.x
-	var posY = global_position.y
-	
-	var deltaY = PLAYERPOSY - posY
-	var deltaX = PLAYERPOSX - posX
-	move.x = deltaX
-	move.y = deltaY
-	if move.length() > 100:
-		move.x = 0
-		move.y = 0
-	
-	if !move.is_normalized():
-		move = move.normalized()
+	get_parent()._calculate_MOVE()
+#	var posX = global_position.x
+#	var posY = global_position.y
+#
+#	var deltaY = PLAYERPOSY - posY
+#	var deltaX = PLAYERPOSX - posX
+#	move.x = deltaX
+#	move.y = deltaY
+#	if move.length() > 100:
+#		move.x = 0
+#		move.y = 0
+#
+#	if !move.is_normalized():
+#		move = move.normalized()
 	pass
 	
 func is_hit():
+	life =- 1
 	life -= 1
 	if life == 0:
 		queue_free()
+		
+func  _setSPEED(speed):
+	SPEED = speed
+
+func _setLifes(lifes):
+	life =lifes
