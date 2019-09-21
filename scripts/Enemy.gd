@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var deathSound=get_tree().get_root().get_node("Game").get_node("DeathKI")
+
 var PLAYERPOSX
 var PLAYERPOSY
 var VIEWDISTANCE = 0
@@ -45,6 +47,7 @@ func _calculate_move():
 func is_hit():
 	life -= 1
 	if life == 0:
+		deathSound.play()
 		queue_free()
 		
 func  _setSPEED(speed):

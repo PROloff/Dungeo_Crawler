@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/sounds/Sieht man das ICED OUT.wav" type="AudioStream" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/sounds/Items/Sword.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/sounds/BilliardSwing.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/Enemie/EnemieDeath.wav" type="AudioStream" id=10]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -37,3 +38,6 @@ stream = ExtResource( 8 )
 [node name="BilliardHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = 5.0
+
+[node name="DeathKI" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )

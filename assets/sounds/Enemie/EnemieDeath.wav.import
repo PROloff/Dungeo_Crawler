@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EnemieDeath.wav-6dd56bc640224ceb6821e0692cf59867.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Enemie/EnemieDeath.wav"
+dest_files=[ "res://.import/EnemieDeath.wav-6dd56bc640224ceb6821e0692cf59867.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
