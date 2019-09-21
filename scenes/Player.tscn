@@ -20,7 +20,7 @@
 [ext_resource path="res://assets/weapon/ChipGreen/ChipGreen_Idle/ChipGreen_Idle.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 7 )
+extents = Vector2( 3.71314, 6.54097 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -55,7 +55,6 @@ position = Vector2( 5.02, 3.56 )
 position = Vector2( 0.0750465, 0 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="Punch" parent="." instance=ExtResource( 17 )]

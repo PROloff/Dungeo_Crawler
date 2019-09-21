@@ -1,18 +1,64 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://assets/filler_16.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/Idle/Slot_Idle1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Idle/Slot_Idle2.png" type="Texture" id=3]
+[ext_resource path="res://assets/Idle/Slot_Idle3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Idle/Slot_Idle4.png" type="Texture" id=5]
+[ext_resource path="res://assets/Idle/Slot_Idle5.png" type="Texture" id=6]
+[ext_resource path="res://assets/Idle/Slot_Idle6.png" type="Texture" id=7]
+[ext_resource path="res://assets/Idle/Slot_Idle7.png" type="Texture" id=8]
+[ext_resource path="res://assets/Idle/Slot_Idle8.png" type="Texture" id=9]
+[ext_resource path="res://assets/Idle/Slot_Idle9.png" type="Texture" id=10]
+[ext_resource path="res://assets/Idle/Slot_Idle10.png" type="Texture" id=11]
+[ext_resource path="res://assets/Idle/Slot_Idle11.png" type="Texture" id=12]
+[ext_resource path="res://assets/Idle/Slot_Idle12.png" type="Texture" id=13]
+[ext_resource path="res://assets/Idle/Slot_Idle13.png" type="Texture" id=14]
+[ext_resource path="res://assets/Idle/Slot_Idle14.png" type="Texture" id=15]
+[ext_resource path="res://assets/Idle/Slot_Idle15.png" type="Texture" id=16]
+[ext_resource path="res://assets/Idle/Slot_Idle16.png" type="Texture" id=17]
+[ext_resource path="res://assets/Idle/Slot_Idle17.png" type="Texture" id=18]
+[ext_resource path="res://assets/Idle/Slot_Idle18.png" type="Texture" id=19]
+[ext_resource path="res://assets/Idle/Slot_Idle19.png" type="Texture" id=20]
+[ext_resource path="res://assets/Idle/Slot_Idle20.png" type="Texture" id=21]
+[ext_resource path="res://assets/Idle/Slot_Idle21.png" type="Texture" id=22]
+[ext_resource path="res://assets/Idle/Slot_Idle22.png" type="Texture" id=23]
+[ext_resource path="res://assets/Idle/Slot_Idle23.png" type="Texture" id=24]
+[ext_resource path="res://assets/Idle/Slot_Idle24.png" type="Texture" id=25]
+[ext_resource path="res://assets/Idle/Slot_Idle25.png" type="Texture" id=26]
+[ext_resource path="res://assets/Idle/Slot_Idle26.png" type="Texture" id=27]
+[ext_resource path="res://assets/Walk/Slot_Walk1.png" type="Texture" id=28]
+[ext_resource path="res://assets/Walk/Slot_Walk2.png" type="Texture" id=29]
+[ext_resource path="res://assets/Walk/Slot_Walk3.png" type="Texture" id=30]
+[ext_resource path="res://assets/Walk/Slot_Walk4.png" type="Texture" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 6.46713, 8.38846 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+} ]
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 100, 100 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1.44, 1.46 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.0437698, 0 )
-texture = ExtResource( 2 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 2 )
+animation = "idle"
+frame = 3
+playing = true
