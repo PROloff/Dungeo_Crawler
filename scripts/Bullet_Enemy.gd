@@ -26,8 +26,11 @@ func _setMove(pMove):
 	if move.length() > 1:
 		move = move.normalized()
 
+func _setPosition(pos):
+	global_position = pos
+
 func check_for_hit():
 	for body in get_overlapping_bodies():
-		if body.has_method("is_hit"):
-			body.is_hit()
+		if body.has_method("player_hit"):
+			body.player_hit()
 			queue_free()

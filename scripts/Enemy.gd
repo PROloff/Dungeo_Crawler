@@ -5,6 +5,7 @@ onready var deathSound=get_tree().get_root().get_node("Game").get_node("DeathKI"
 var PLAYERPOSX
 var PLAYERPOSY
 var VIEWDISTANCE = 0
+var MOVEDISTANCE = 0
 var SPEED = 40
 var move = Vector2(0,0)
 var life = 3
@@ -21,14 +22,12 @@ func _process(delta):
 	pass
 
 func _set_Player_Position():
-	var pos = get_parent().get_parent()._give_Player_Position()
+	var pos = get_parent()._set_Player_Position()
 	PLAYERPOSX = pos.x
 	PLAYERPOSY = pos.y
 	pass
 
 func _calculate_move():
-	
-	#get_parent()._calculate_MOVE()
 	var posX = global_position.x
 	var posY = global_position.y
 
@@ -36,19 +35,20 @@ func _calculate_move():
 	var deltaX = PLAYERPOSX - posX
 	move.x = deltaX
 	move.y = deltaY
-	if move.length() > VIEWDISTANCE:
+	if move.length() < VIEWDISTANCE:
 		move.x = 0
 		move.y = 0
-
+	
 	if !move.is_normalized():
 		move = move.normalized()
-	pass
 	
+
 func is_hit():
 	life -= 1
 	if life == 0:
 		deathSound.play()
 		queue_free()
+		get_parent()._destroy()
 		
 func  _setSPEED(speed):
 	SPEED = speed
@@ -58,3 +58,6 @@ func _setLifes(lifes):
 
 func _setViewDistance(distance):
 	VIEWDISTANCE = distance
+
+func _setMoveDistance (dis):
+	MOVEDISTANCE = dis
