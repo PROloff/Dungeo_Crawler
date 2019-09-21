@@ -25,24 +25,22 @@ func _set_Player_Position():
 
 func _calculate_move():
 	
-	get_parent()._calculate_MOVE()
-#	var posX = global_position.x
-#	var posY = global_position.y
-#
-#	var deltaY = PLAYERPOSY - posY
-#	var deltaX = PLAYERPOSX - posX
-#	move.x = deltaX
-#	move.y = deltaY
-#	if move.length() > 100:
-#		move.x = 0
-#		move.y = 0
-#
-#	if !move.is_normalized():
-#		move = move.normalized()
+	var posX = global_position.x
+	var posY = global_position.y
+
+	var deltaY = PLAYERPOSY - posY
+	var deltaX = PLAYERPOSX - posX
+	move.x = deltaX
+	move.y = deltaY
+	if move.length() > 100:
+		move.x = 0
+		move.y = 0
+
+	if !move.is_normalized():
+		move = move.normalized()
 	pass
 	
 func is_hit():
-	life =- 1
 	life -= 1
 	if life == 0:
 		queue_free()
