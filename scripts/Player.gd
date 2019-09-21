@@ -1,9 +1,12 @@
 extends KinematicBody2D
 
-var SPEED = 70
-var ROLLSPEED = 200
-var ROLLLENGTH = 60
-var COOLDOWNLENGTH = 120
+const SPEED = 100
+const ROLLSPEED = 250
+const ROLLLENGTH = 60
+const COOLDOWNLENGTH = 120
+
+const BULLET = preload("res://scenes/Bullet.tscn")
+
 var rollDirection = Vector2(0,0)
 var rollCounter = 0
 
@@ -14,7 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var move = Vector2(0,0)
-	
+	#input direction
 	if Input.is_action_pressed("down"):
 		move.y = 1
 	if Input.is_action_pressed("up"):
@@ -23,18 +26,23 @@ func _process(delta):
 		move.x = -1
 	if Input.is_action_pressed("right"):
 		move.x = 1
-	
+	#normalize speed
 	if move.length() > 1:
 		move *= 0.71
-	
+	#input roll
 	if move.length() > 0 && Input.is_action_just_pressed("roll") && rollCounter == 0:
 		rollCounter = ROLLLENGTH + COOLDOWNLENGTH
 		rollDirection = move
-	
+	#roll cooldown
 	if rollCounter > 0:
 		rollCounter -= 1
-	
+	#move
 	if rollCounter > COOLDOWNLENGTH:
 		move_and_slide(rollDirection * ROLLSPEED)
 	else:
 		move_and_slide(move * SPEED)
+	
+	if Input.is_action_just_pressed("attack"):
+		var bullet = BULLET.instance()
+		get_parent().add_child(bullet)
+		bullet.position = $Position2D.global_position
