@@ -8,9 +8,11 @@ const SPEED = 100
 const ROLLSPEED = 250
 const ROLLLENGTH = 60
 const COOLDOWNLENGTH = 120
+const BULLETCOOLDOWN = 30
 
 const BULLET = preload("res://scenes/Bullet.tscn")
 
+var bulletcooldown = 0
 var rollDirection = Vector2(0,0)
 var rollCounter = 0
 var life = 3
@@ -74,14 +76,19 @@ func _process(delta):
 		else:
 			$Disc.visible = false
 			$Punch.visible = true
+	
+	if bulletcooldown >= 0:
+		bulletcooldown -= 100 * delta
 	#attack
 	if Input.is_action_just_pressed("attack"):
 		if weapon == 1:
-			var bullet = BULLET.instance()
-			get_parent().add_child(bullet)
-			bulletS.play()
-			bullet._set_playerPosition(position)
-			bullet.position = $Position2D.global_position
+			if bulletcooldown <= 0:
+				bulletcooldown = BULLETCOOLDOWN
+				var bullet = BULLET.instance()
+				get_parent().add_child(bullet)
+				bulletS.play()
+				bullet._set_playerPosition(position)
+				bullet.position = $Position2D.global_position
 		else:
 			$Punch.hit()
 	
