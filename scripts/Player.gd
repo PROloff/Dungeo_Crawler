@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var dashS=get_tree().get_root().get_node("Game").get_node("Dash")
 onready var bulletS=get_tree().get_root().get_node("Game").get_node("BulletSound")
 onready var player=get_tree().get_root().get_node("Game").get_node("AudioStreamPlayer")
+onready var audio = get_node("AudioStreamPlayer2D")
 
 const SPEED = 100
 const ROLLSPEED = 250

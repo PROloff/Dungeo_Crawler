@@ -1,27 +1,27 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
-[ext_resource path="res://assets/sounds/Sieht man das ICED OUT.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/sounds/player/Running.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/sounds/Soundtrack.wav" type="AudioStream" id=4]
-[ext_resource path="res://scenes/KI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Loadingscreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sounds/Sieht man das ICED OUT.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/player/Running.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/Soundtrack.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/Items/Chip.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/sounds/Items/Sword.wav" type="AudioStream" id=7]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="ICEDOUT" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 2 )
+[node name="Loadingscreen" parent="." instance=ExtResource( 2 )]
+visible = false
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="ICEDOUT" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 
-[node name="Background" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 
-[node name="KI" parent="." instance=ExtResource( 5 )]
-position = Vector2( -0.0437679, 0 )
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 
 [node name="BulletSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
