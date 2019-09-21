@@ -41,3 +41,6 @@ volume_db = 5.0
 
 [node name="DeathKI" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+
+[node name="BulletHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )

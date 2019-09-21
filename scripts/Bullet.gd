@@ -1,5 +1,7 @@
 extends Area2D
 
+onready var bulletHitSound=get_tree().get_root().get_node("Game").get_node("BulletHit")
+
 const SPEED = 400
 var move = Vector2()
 
@@ -28,5 +30,6 @@ func _set_playerPosition(var pPosition):
 func check_for_hit():
 	for body in get_overlapping_bodies():
 		if body.has_method("is_hit"):
+			bulletHitSound.play()
 			body.is_hit()
 			queue_free()
