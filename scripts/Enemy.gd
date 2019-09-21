@@ -12,6 +12,7 @@ var life = 3
 
 
 func _ready():
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,8 +50,8 @@ func _calculate_move():
 func is_hit(var x):
 	life -= x
 	if life == 0:
+		queue_free()	
 		deathSound.play()
-		queue_free()
 		get_parent()._destroy()
 		
 func  _setSPEED(speed):
