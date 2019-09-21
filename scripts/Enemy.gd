@@ -30,7 +30,7 @@ func _set_Player_Position():
 func _calculate_move():
 	var posX = global_position.x
 	var posY = global_position.y
-
+	
 	var deltaY = PLAYERPOSY - posY
 	var deltaX = PLAYERPOSX - posX
 	move.x = deltaX
@@ -43,8 +43,8 @@ func _calculate_move():
 		move = move.normalized()
 	
 
-func is_hit():
-	life -= 1
+func is_hit(var x):
+	life -= x
 	if life == 0:
 		deathSound.play()
 		queue_free()

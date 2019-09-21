@@ -25,7 +25,7 @@ func hit():
 		for body in get_overlapping_bodies():
 			if body.has_method("is_hit"):
 				hitSound.play()
-				body.is_hit()
+				body.is_hit(10)
 
 
 func _on_AnimatedSprite_animation_finished():

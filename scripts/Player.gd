@@ -5,9 +5,9 @@ onready var bulletS=get_tree().get_root().get_node("Game").get_node("BulletSound
 onready var player=get_tree().get_root().get_node("Game").get_node("AudioStreamPlayer")
 
 const SPEED = 100
-const ROLLSPEED = 250
-const ROLLLENGTH = 60
-const COOLDOWNLENGTH = 120
+const ROLLSPEED = 300
+const ROLLLENGTH = 40
+const COOLDOWNLENGTH = 60
 const BULLETCOOLDOWN = 30
 
 const BULLET = preload("res://scenes/Bullet.tscn")
