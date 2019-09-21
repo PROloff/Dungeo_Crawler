@@ -43,6 +43,7 @@ func _calculate_move():
 	
 func is_hit():
 	life =- 1
+	life -= 1
 	if life == 0:
 		queue_free()
 		

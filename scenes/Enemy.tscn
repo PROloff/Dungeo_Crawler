@@ -14,4 +14,5 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.0437698, 0 )
 texture = ExtResource( 2 )
