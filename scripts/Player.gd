@@ -58,13 +58,13 @@ func _process(delta):
 	else:
 		$AnimatedSprite.play("idle")
 	#input roll
-	if move.length() > 0 && Input.is_action_just_pressed("roll") && rollCounter == 0:
+	if move.length() > 0 && Input.is_action_just_pressed("roll") && rollCounter <= 0:
 		rollCounter = ROLLLENGTH + COOLDOWNLENGTH
 		rollDirection = move
 		dashS.play()
 	#roll cooldown
 	if rollCounter > 0:
-		rollCounter -= 1
+		rollCounter -= 175 * delta
 	#move
 	if rollCounter > COOLDOWNLENGTH:
 		move_and_slide(rollDirection * ROLLSPEED)
