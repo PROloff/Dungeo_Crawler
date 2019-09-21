@@ -84,7 +84,7 @@ func _process(delta):
 	if weapon == -1:
 		$Punch.rotation = (- position + get_global_mouse_position()).angle()
 	
-
+	
 	if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right") :
 		if !player.is_playing():
 			player.play()
