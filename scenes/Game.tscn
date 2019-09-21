@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/sounds/player/Running.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/sounds/Soundtrack.wav" type="AudioStream" id=4]
 [ext_resource path="res://scenes/KI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sounds/Coin.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/Items/Chip.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/sounds/Items/Sword.wav" type="AudioStream" id=7]
 
 [node name="Game" type="Node2D"]
