@@ -25,6 +25,8 @@ func _on_Button_Highscores_pressed():
 
 
 func _on_Button_Credits_pressed():
+	clickSound.play()
+	get_tree().change_scene(\"res://scenes/Credits.tscn\")
 	pass # Replace with function body.
 "
 
