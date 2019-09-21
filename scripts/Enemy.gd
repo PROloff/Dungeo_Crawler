@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var PLAYERPOSX
 var PLAYERPOSY
+var VIEWDISTANCE = 0
 var SPEED = 40
 var move = Vector2(0,0)
 var life = 3
@@ -18,13 +19,14 @@ func _process(delta):
 	pass
 
 func _set_Player_Position():
-	var pos = get_parent()._give_Player_Position()
+	var pos = get_parent().get_parent()._give_Player_Position()
 	PLAYERPOSX = pos.x
 	PLAYERPOSY = pos.y
 	pass
 
 func _calculate_move():
 	
+	#get_parent()._calculate_MOVE()
 	var posX = global_position.x
 	var posY = global_position.y
 
@@ -32,7 +34,7 @@ func _calculate_move():
 	var deltaX = PLAYERPOSX - posX
 	move.x = deltaX
 	move.y = deltaY
-	if move.length() > 100:
+	if move.length() > VIEWDISTANCE:
 		move.x = 0
 		move.y = 0
 
@@ -50,3 +52,6 @@ func  _setSPEED(speed):
 
 func _setLifes(lifes):
 	life =lifes
+
+func _setViewDistance(distance):
+	VIEWDISTANCE = distance
