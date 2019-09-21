@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-
-
+onready var dashS=get_tree().get_root().get_node("Game").get_node("Dash")
+onready var bulletS=get_tree().get_root().get_node("Game").get_node("BulletSound")
 onready var player=get_tree().get_root().get_node("Game").get_node("AudioStreamPlayer")
 
 const SPEED = 100
@@ -46,6 +46,7 @@ func _process(delta):
 	if move.length() > 0 && Input.is_action_just_pressed("roll") && rollCounter == 0:
 		rollCounter = ROLLLENGTH + COOLDOWNLENGTH
 		rollDirection = move
+		dashS.play()
 	#roll cooldown
 	if rollCounter > 0:
 		rollCounter -= 1
@@ -58,11 +59,12 @@ func _process(delta):
 	if Input.is_action_just_pressed("attack"):
 		var bullet = BULLET.instance()
 		get_parent().add_child(bullet)
+		bulletS.play()
 		bullet._set_playerPosition(position)
 		bullet.position = $Position2D.global_position
 	
 	
-	if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down") or Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right") :
+	if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right") :
 		if !player.is_playing():
 			player.play()
 	elif Input.is_action_just_released("up") and !Input.is_action_pressed("down") and !Input.is_action_pressed("left") and !Input.is_action_pressed("right"):
