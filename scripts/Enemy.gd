@@ -38,6 +38,9 @@ func _calculate_move():
 	if move.length() < VIEWDISTANCE:
 		move.x = 0
 		move.y = 0
+		$AnimatedSprite.play("idle")
+	else:
+		$AnimatedSprite.play("walk")
 	
 	if !move.is_normalized():
 		move = move.normalized()

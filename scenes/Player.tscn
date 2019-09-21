@@ -25,7 +25,7 @@
 [ext_resource path="res://assets/sounds/Soundtrack.wav" type="AudioStream" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 7 )
+extents = Vector2( 3.71314, 6.54097 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
