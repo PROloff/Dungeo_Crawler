@@ -19,16 +19,25 @@ func _process(delta):
 	var move = Vector2(0,0)
 	#input direction
 	if Input.is_action_pressed("down"):
-		move.y = 1
+		move.y += 1
 	if Input.is_action_pressed("up"):
-		move.y = -1
+		move.y -= 1
 	if Input.is_action_pressed("left"):
-		move.x = -1
+		move.x -= 1
+		$AnimatedSprite.flip_h = true
 	if Input.is_action_pressed("right"):
-		move.x = 1
+		move.x += 1
+		$AnimatedSprite.flip_h = false
 	#normalize speed
 	if move.length() > 1:
 		move *= 0.71
+	if move.length() > 0:
+		if rollCounter > COOLDOWNLENGTH:
+			$AnimatedSprite.play("dash")
+		else:
+			$AnimatedSprite.play("walk")
+	else:
+		$AnimatedSprite.play("idle")
 	#input roll
 	if move.length() > 0 && Input.is_action_just_pressed("roll") && rollCounter == 0:
 		rollCounter = ROLLLENGTH + COOLDOWNLENGTH
