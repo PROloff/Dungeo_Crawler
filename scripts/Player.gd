@@ -101,7 +101,7 @@ func _process(delta):
 func player_hit():
 	life -= 1
 	if life == 0:
-		get_tree().change_scene("res://scenes/Title Screen.tscn")
+		get_tree().change_scene("res://scenes/End Screen.tscn")
 
 	
 func _get_Position():
