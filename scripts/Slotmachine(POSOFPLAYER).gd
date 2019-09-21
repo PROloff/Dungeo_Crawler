@@ -32,7 +32,6 @@ func _attack():
 
 func _set_Player_Position():
 	var pos = get_parent()._give_Player_Position()
-	print (pos)
 	PLAYERPOSX = pos.x
 	PLAYERPOSY = pos.y
 	return pos

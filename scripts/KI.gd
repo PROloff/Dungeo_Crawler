@@ -13,7 +13,6 @@ func _ready():
 
 
 func _process(delta):
-	print (pPlayer)
 	a = pPlayer._get_Position()
 
 func _give_Player_Position():
