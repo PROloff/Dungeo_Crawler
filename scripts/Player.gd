@@ -29,9 +29,13 @@ func _process(delta):
 	if Input.is_action_pressed("left"):
 		move.x -= 1
 		$AnimatedSprite.flip_h = true
+		$Sprite.position.x = -5
+		$Position2D.position.x = -5
 	if Input.is_action_pressed("right"):
 		move.x += 1
 		$AnimatedSprite.flip_h = false
+		$Sprite.position.x = 5
+		$Position2D.position.x = 5
 	#normalize speed
 	if move.length() > 1:
 		move *= 0.71

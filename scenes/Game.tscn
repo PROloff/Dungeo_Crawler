@@ -21,6 +21,7 @@ stream = ExtResource( 3 )
 stream = ExtResource( 4 )
 
 [node name="KI" parent="." instance=ExtResource( 5 )]
+position = Vector2( -0.0437679, 0 )
 
 [node name="BulletSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
