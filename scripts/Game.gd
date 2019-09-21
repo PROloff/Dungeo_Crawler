@@ -1,9 +1,5 @@
 extends Node2D
 
-onready var justin=get_tree().get_root().get_node("Game").get_node("ICEDOUT")
-onready var background=get_tree().get_root().get_node("Game").get_node("Background")
-
-
 var RNG = RandomNumberGenerator.new()
 
 var timeDict = OS.get_time()
@@ -11,8 +7,7 @@ var seconds = timeDict.second*OS.get_ticks_msec()
 
 
 func _ready():
-	justin.play()
-	background.play()
+	
 	#Raumgenerierung
 	#Raumbreite und Höhe
 	var width = 7

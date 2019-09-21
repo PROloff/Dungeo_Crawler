@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
-onready var dashS=get_tree().get_root().get_node("Game").get_node("Dash")
-onready var bulletS=get_tree().get_root().get_node("Game").get_node("BulletSound")
-onready var player=get_tree().get_root().get_node("Game").get_node("AudioStreamPlayer")
+onready var dashS=get_node("Dash")
+onready var bulletS=get_node("BulletSound")
+onready var player=get_node("AudioStreamPlayer")
+onready var justin=get_node("ICEDOUT")
+onready var background=get_node("Background")
 
 const SPEED = 100
 const ROLLSPEED = 300
@@ -20,7 +22,8 @@ var weapon = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	justin.play()
+	background.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

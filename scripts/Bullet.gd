@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var bulletHitSound=get_tree().get_root().get_node("Game").get_node("BulletHit")
+onready var bulletHitSound=get_node("BulletHit")
 
 const SPEED = 400
 var move = Vector2()

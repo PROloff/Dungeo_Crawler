@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var deathSound=get_tree().get_root().get_node("Game").get_node("DeathKI")
+onready var deathSound=get_node("DeathSound")
 
 var PLAYERPOSX
 var PLAYERPOSY

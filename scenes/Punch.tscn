@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Punch.gd" type="Script" id=1]
 [ext_resource path="res://assets/Stock_Swing/Stock1.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/Stock_Swing/Stock4.png" type="Texture" id=5]
 [ext_resource path="res://assets/Stock_Swing/Stock5.png" type="Texture" id=6]
 [ext_resource path="res://assets/Stock_Swing/Stock6.png" type="Texture" id=7]
+[ext_resource path="res://assets/sounds/BilliardSwing.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -39,4 +41,10 @@ scale = Vector2( 2.2, 2.2 )
 frames = SubResource( 2 )
 animation = "idle"
 playing = true
+
+[node name="BilliardSchwung" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="BilliardHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

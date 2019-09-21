@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://assets/filler.jpg" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/weapon/ChipGreen/ChipGreen_Spinning/ChipGreen_Spinning2.png" type="Texture" id=4]
 [ext_resource path="res://assets/weapon/ChipGreen/ChipGreen_Spinning/ChipGreen_Spinning3.png" type="Texture" id=5]
 [ext_resource path="res://assets/weapon/ChipGreen/ChipGreen_Spinning/ChipGreen_Spinning4.png" type="Texture" id=6]
+[ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.70024
@@ -37,6 +38,8 @@ rect = Rect2( -4, -4, 8, 8 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "rotation"
-frame = 2
 playing = true
+
+[node name="BulletHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

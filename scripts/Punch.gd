@@ -1,8 +1,8 @@
 extends Area2D
 
 const COOLDOWN = 0
-onready var swingSound=get_tree().get_root().get_node("Game").get_node("BilliardSchwung")
-onready var hitSound=get_tree().get_root().get_node("Game").get_node("BilliardHit")
+onready var swingSound=get_node("BilliardSchwung")
+onready var hitSound=get_node("BilliardHit")
 var cooldown = 0
 var hitting = false
 
