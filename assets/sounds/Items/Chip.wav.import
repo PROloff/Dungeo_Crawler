@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Chip.wav-410a81edc32502d38282fffe30401c77.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Items/Chip.wav"
+dest_files=[ "res://.import/Chip.wav-410a81edc32502d38282fffe30401c77.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
