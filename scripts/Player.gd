@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+
+
+onready var player=get_tree().get_root().get_node("Game").get_node("AudioStreamPlayer")
+
 const SPEED = 100
 const ROLLSPEED = 250
 const ROLLLENGTH = 60
@@ -56,3 +60,18 @@ func _process(delta):
 		get_parent().add_child(bullet)
 		bullet._set_playerPosition(position)
 		bullet.position = $Position2D.global_position
+	
+	
+	if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down") or Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right") :
+		if !player.is_playing():
+			player.play()
+	elif Input.is_action_just_released("up") and !Input.is_action_pressed("down") and !Input.is_action_pressed("left") and !Input.is_action_pressed("right"):
+		player.stop()
+	elif Input.is_action_just_released("down")and !Input.is_action_pressed("up") and !Input.is_action_pressed("left") and !Input.is_action_pressed("right"):
+		player.stop()
+	elif Input.is_action_just_released("left")and !Input.is_action_pressed("down") and !Input.is_action_pressed("up") and !Input.is_action_pressed("right"):
+		player.stop()
+	elif Input.is_action_just_released("right")and !Input.is_action_pressed("down") and !Input.is_action_pressed("left") and !Input.is_action_pressed("up"):
+		player.stop()
+
+
