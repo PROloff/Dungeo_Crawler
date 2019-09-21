@@ -54,4 +54,5 @@ func _process(delta):
 	if Input.is_action_just_pressed("attack"):
 		var bullet = BULLET.instance()
 		get_parent().add_child(bullet)
+		bullet._set_playerPosition(position)
 		bullet.position = $Position2D.global_position
