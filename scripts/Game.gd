@@ -8,8 +8,7 @@ onready var wall_south = preload("res://scenes/wall_south.tscn")
 onready var wall_east = preload("res://scenes/wall_east.tscn")
 onready var wall_west = preload("res://scenes/wall_west.tscn")
 onready var player = get_node("Player")
-onready var camera = get_node("Camera2D")
-
+onready var camera = get_node("Player/Camera2D")
 
 #RNG
 var RNG = RandomNumberGenerator.new()
@@ -35,10 +34,8 @@ func _ready():
 	player.position.x = 448*4+224
 	player.position.y = 256*4+128
 	
-	#Kamera auf Startpunkt des Spielers setzen
-	camera.position.x = player.position.x
-	camera.position.y = player.position.y
-	
+	#Kamera auf Spieler setzen
+	camera.current = true
 
 
 
@@ -187,7 +184,4 @@ func checkNeighbours(var x, var y, var matrix):
 	return value_arr
 
 
-func _process(delta):
-	
-	pass
 
