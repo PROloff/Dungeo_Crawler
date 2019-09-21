@@ -7,7 +7,7 @@ onready var player=get_tree().get_root().get_node("Game").get_node("AudioStreamP
 const SPEED = 100
 const ROLLSPEED = 300
 const ROLLLENGTH = 40
-const COOLDOWNLENGTH = 60
+const COOLDOWNLENGTH = 40
 const BULLETCOOLDOWN = 30
 
 const BULLET = preload("res://scenes/Bullet.tscn")

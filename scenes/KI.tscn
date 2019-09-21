@@ -9,5 +9,17 @@ script = ExtResource( 1 )
 
 [node name="Slotmachine(POSOFPLAYER)" parent="." instance=ExtResource( 2 )]
 
+[node name="Slotmachine(POSOFPLAYER)2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 114.397, 210.694 )
+
+[node name="Slotmachine(POSOFPLAYER)3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 368.004, 70.2913 )
+
+[node name="Slotmachine(POSOFPLAYER)4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 258.373, 38.5141 )
+
+[node name="Slotmachine(POSOFPLAYER)5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 373.168, 162.048 )
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 20, 20 )
+position = Vector2( 222.886, 144.231 )

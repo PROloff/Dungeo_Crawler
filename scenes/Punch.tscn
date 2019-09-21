@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/Stock_Swing/Stock5.png" type="Texture" id=6]
 [ext_resource path="res://assets/Stock_Swing/Stock6.png" type="Texture" id=7]
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -27,15 +27,15 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 19.2966, -3.77031 )
-rotation = 0.314159
-scale = Vector2( 2, 2 )
-shape = SubResource( 3 )
+position = Vector2( 22.913, -5.617 )
+rotation = 4.46804
+scale = Vector2( 2, 2.48 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 17.2053, -7.46706 )
+position = Vector2( 18.8211, -8.23651 )
 rotation = 0.558505
-scale = Vector2( 2, 2 )
+scale = Vector2( 2.2, 2.2 )
 frames = SubResource( 2 )
 animation = "idle"
 playing = true

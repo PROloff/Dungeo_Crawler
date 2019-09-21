@@ -4,9 +4,9 @@ onready var pEnemy = get_node("Enemy")
 const BULLET = preload("res://scenes/Bullet_Enemy.tscn")
 var PLAYERPOSX
 var PLAYERPOSY
-var viewDistance = 200
+var viewDistance = 130
 var moveDistance = 50
-var speed = 20
+var speed = 20 #movement
 var lifes = 20
 var move = Vector2(0,0)
 var bulletDirection

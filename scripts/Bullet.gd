@@ -31,5 +31,5 @@ func check_for_hit():
 	for body in get_overlapping_bodies():
 		if body.has_method("is_hit"):
 			bulletHitSound.play()
-			body.is_hit(1)
+			body.is_hit(2)
 			queue_free()
