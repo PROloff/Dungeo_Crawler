@@ -16,12 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="DungeonCrawler"
-run/main_scene="res://scenes/Title Screen.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=448
+window/size/width=456
 window/size/height=256
 window/size/test_width=1280
 window/size/test_height=720
