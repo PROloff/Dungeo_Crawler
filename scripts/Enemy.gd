@@ -9,7 +9,7 @@ var rollDirection = Vector2(0,0)
 var rollCounter = 0
 var RNG = RandomNumberGenerator.new()
 var move = Vector2(0,0)
-# Called when the node enters the scene tree for the first time.
+var life = 3
 
 
 func _ready():
@@ -44,3 +44,8 @@ func _calculate_move():
 	if !move.is_normalized():
 		move = move.normalized()
 	pass
+	
+func is_hit():
+	life =- 1
+	if life == 0:
+		queue_free()
