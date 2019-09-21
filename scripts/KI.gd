@@ -4,7 +4,6 @@ extends Node2D
 # var a = 2
 # var b = "text"
 onready var pPlayer = get_node("Player")
-onready var pEnemy = get_node("Enemy")
 var a
 # Called when the node enters the scene tree for the first time.
 func _ready():

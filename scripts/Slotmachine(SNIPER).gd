@@ -4,16 +4,16 @@ onready var pEnemy = get_node("Enemy")
 const BULLET = preload("res://scenes/Bullet_Enemy.tscn")
 var PLAYERPOSX
 var PLAYERPOSY
-var viewDistance = 500
+var viewDistance = 350
 var moveDistance = 50
 var speed = 20 #movement
 var lifes = 20
 var move = Vector2(0,0)
 var bulletDirection
-var isShooting = true
+var isShooting = false
 var timeSinceShoot = 0.0
-var shootDelay = 5.5
-var positions
+var shootDelay = 3.3
+var POSITIONS = PoolVector2Array()
 var timeSincePositionSaved = 0.0
 # Declare member variables here. Examples:
 # var a = 2
@@ -21,7 +21,6 @@ var timeSincePositionSaved = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	positions = PoolVector2Array()
 	pEnemy._setLifes(lifes)
 	pEnemy._setSPEED(speed)
 	pEnemy._setViewDistance(viewDistance)
@@ -31,16 +30,18 @@ func _ready():
 func _process(delta):
 	_set_Player_Position()
 	_calculateBulletDirection()
-	timeSincePositionSaved +=delta
+	timeSincePositionSaved += delta
 	
 	if isShooting:
 		timeSinceShoot += delta
 	
 	if timeSinceShoot > shootDelay:
-		isShooting = false;
-		timeSinceShoot = 0.0;
+		print("attack")
+		isShooting = false
+		_attack()
+		timeSinceShoot = 0.0
 	
-	if timeSincePositionSaved > 0.5:
+	if timeSincePositionSaved > shootDelay/10:
 		_savePos()
 		timeSincePositionSaved = 0.0
 	
@@ -52,29 +53,37 @@ func _attack():
 	bullet._set_enemyPosition(global_position)
 	bullet._setMove(bulletDirection)
 	bullet._setPosition(pEnemy.global_position)
-	
+	POSITIONS = PoolVector2Array()
 
 func _set_Player_Position():
-	var pos = get_parent()._give_Player_Position()
-	PLAYERPOSX = pos.x
-	PLAYERPOSY = pos.y
-	return pos
-
+	var posi = get_parent()._give_Player_Position()
+	PLAYERPOSX = posi.x
+	PLAYERPOSY = posi.y
+	return posi
+	
 func _savePos():
+	print (POSITIONS.size())
 	var temp = Vector2(PLAYERPOSX, PLAYERPOSY)
-	positions.append(temp)
-	pass
+	POSITIONS.append(temp)
 
 func _playerPosAtDelta(delta):
 	var a = Vector2(PLAYERPOSX, PLAYERPOSY)
 	var x = delta
 	var r = Vector2(0,0)
-	var positon = Vector2(1,1)
-	
-	
-	return position
+	var positionFinal = Vector2(1,1)
+	if POSITIONS.size() > 0:
+		var preaviousPos = POSITIONS[0]
+		for pos in POSITIONS:
+			r+=preaviousPos-pos
+			preaviousPos = pos
+			pass
+		r = r / POSITIONS.size()
+	positionFinal = a+ (delta* r)
+	return positionFinal
 
 func _calculateInterception():
+	var posPlayerAtDelta
+	var posBulletOnDelta
 	
 	pass
 
@@ -82,19 +91,15 @@ func _calculateBulletDirection():
 	bulletDirection = Vector2(0,0)
 	var posX = pEnemy.global_position.x
 	var posY = pEnemy.global_position.y
-	var deltaY = PLAYERPOSY - posY
-	var deltaX = PLAYERPOSX - posX
+	var epos = _playerPosAtDelta(10)
+	var deltaY = epos.y - posY
+	var deltaX = epos.x - posX
 	bulletDirection.x = deltaX
 	bulletDirection.y = deltaY
-	
-	
-	
-	
-	
 	if bulletDirection.length() < viewDistance && !isShooting:
 		if !bulletDirection.is_normalized():
 			bulletDirection = bulletDirection.normalized()
-		_attack()
+		print(bulletDirection)
 		isShooting = true
 	pass
 
