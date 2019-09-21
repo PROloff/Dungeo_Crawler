@@ -27,6 +27,7 @@ position = Vector2( 0.0134621, -0.00673199 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0134621, -0.00673199 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
@@ -36,5 +37,6 @@ rect = Rect2( -4, -4, 8, 8 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "rotation"
+frame = 2
 playing = true
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -35,6 +35,7 @@ func _calculate_move():
 	move.x = deltaX
 	move.y = deltaY
 	if move.length() > VIEWDISTANCE:
+	if move.length() > 100:
 		move.x = 0
 		move.y = 0
 
