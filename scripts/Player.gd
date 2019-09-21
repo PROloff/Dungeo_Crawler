@@ -1,12 +1,11 @@
 extends KinematicBody2D
 
-var SPEED = 50
-var ROLLSPEED = 1
+var SPEED = 70
+var ROLLSPEED = 200
 var ROLLLENGTH = 60
-var COOLDOWNLENGTH = 60
+var COOLDOWNLENGTH = 120
 var rollDirection = Vector2(0,0)
 var rollCounter = 0
-var cooldownCounter = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,16 +27,14 @@ func _process(delta):
 	if move.length() > 1:
 		move *= 0.71
 	
-	if move.length() > 0 && Input.is_action_just_pressed("roll") && rollCounter == 0 && cooldownCounter == 0:
-		rollCounter = ROLLLENGTH
+	if move.length() > 0 && Input.is_action_just_pressed("roll") && rollCounter == 0:
+		rollCounter = ROLLLENGTH + COOLDOWNLENGTH
 		rollDirection = move
-		cooldownCounter = COOLDOWNLENGTH + ROLLLENGTH
-	
-	if cooldownCounter > 0:
-		cooldownCounter -= 1
 	
 	if rollCounter > 0:
 		rollCounter -= 1
-		move_and_collide(rollDirection * ROLLSPEED)
+	
+	if rollCounter > COOLDOWNLENGTH:
+		move_and_slide(rollDirection * ROLLSPEED)
 	else:
 		move_and_slide(move * SPEED)
