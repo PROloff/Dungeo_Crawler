@@ -14,6 +14,7 @@ const BULLET = preload("res://scenes/Bullet.tscn")
 
 var rollDirection = Vector2(0,0)
 var rollCounter = 0
+var is_on_screen = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -86,3 +87,14 @@ func _process(delta):
 	
 func _get_Position():
 	return global_position
+
+func _on_VisibilityNotifier2D_screen_exited():
+	is_on_screen = false
+	print("player no longer on screen")
+	pass # Replace with function body.
+
+
+func _on_VisibilityNotifier2D_screen_entered():#
+	is_on_screen = true
+	print("player is on screen")
+	pass # Replace with function body.

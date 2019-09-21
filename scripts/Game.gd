@@ -7,7 +7,8 @@ onready var wall_north = preload("res://scenes/wall_north.tscn")
 onready var wall_south = preload("res://scenes/wall_south.tscn")
 onready var wall_east = preload("res://scenes/wall_east.tscn")
 onready var wall_west = preload("res://scenes/wall_west.tscn")
-onready var player = preload("res://scenes/Player.tscn")
+onready var player = get_node("Player")
+onready var camera = get_node("Camera2D")
 
 
 #RNG
@@ -31,13 +32,12 @@ func _ready():
 	generate_walls(array)
 	
 	#Spawnen des Spielers
-	var p = player.instance()
-	add_child(p)
-	p.position.x = 448*4+224
-	p.position.y = 256*4+128
+	player.position.x = 448*4+224
+	player.position.y = 256*4+128
 	
-	#Kamera für Tests auf Spieler verfolgen stellen:
-	p.get_node("Camera2D").current = true
+	#Kamera auf Startpunkt des Spielers setzen
+	camera.position.x = player.position.x
+	camera.position.y = player.position.y
 	
 
 
