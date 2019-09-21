@@ -37,13 +37,21 @@ animations = [ {
 "name": "walk",
 "speed": 8.0
 } ]
+[ext_resource path="res://assets/filler_16.jpg" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( -0.0449333, 0.0224667 )
+position = Vector2( 100, 100 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.0982132, 0.888708 )
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="."]
