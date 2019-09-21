@@ -7,15 +7,15 @@
 [ext_resource path="res://assets/Character/Idle/Idle4.png" type="Texture" id=5]
 [ext_resource path="res://assets/Character/Idle/Idle5.png" type="Texture" id=6]
 [ext_resource path="res://assets/Character/Idle/Idle6.png" type="Texture" id=7]
-[ext_resource path="res://assets/Character/Dash/Dashr.png" type="Texture" id=8]
-[ext_resource path="res://assets/Character/Walk/Walk1.png" type="Texture" id=9]
-[ext_resource path="res://assets/Character/Walk/Walk2.png" type="Texture" id=10]
-[ext_resource path="res://assets/Character/Walk/Walk3.png" type="Texture" id=11]
-[ext_resource path="res://assets/Character/Walk/Walk4.png" type="Texture" id=12]
-[ext_resource path="res://assets/Character/Walk/Walk5.png" type="Texture" id=13]
-[ext_resource path="res://assets/Character/Walk/Walk6.png" type="Texture" id=14]
-[ext_resource path="res://assets/Character/Walk/Walk7.png" type="Texture" id=15]
-[ext_resource path="res://assets/Character/Walk/Walk8.png" type="Texture" id=16]
+[ext_resource path="res://assets/Character/Walk/Walk1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Character/Walk/Walk2.png" type="Texture" id=9]
+[ext_resource path="res://assets/Character/Walk/Walk3.png" type="Texture" id=10]
+[ext_resource path="res://assets/Character/Walk/Walk4.png" type="Texture" id=11]
+[ext_resource path="res://assets/Character/Walk/Walk5.png" type="Texture" id=12]
+[ext_resource path="res://assets/Character/Walk/Walk6.png" type="Texture" id=13]
+[ext_resource path="res://assets/Character/Walk/Walk7.png" type="Texture" id=14]
+[ext_resource path="res://assets/Character/Walk/Walk8.png" type="Texture" id=15]
+[ext_resource path="res://assets/Character/Dash/Dashr.png" type="Texture" id=16]
 [ext_resource path="res://scenes/Punch.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/weapon/ChipGreen/ChipGreen_Idle/ChipGreen_Idle.png" type="Texture" id=18]
 
@@ -29,15 +29,15 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "dash",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "dash",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -55,11 +55,12 @@ position = Vector2( 5.02, 3.56 )
 position = Vector2( 0.0750465, 0 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Punch" parent="." instance=ExtResource( 17 )]
 visible = false
+position = Vector2( 4.503, 5.4605 )
 
 [node name="Disc" type="Sprite" parent="."]
 position = Vector2( 5, 3.5 )

@@ -32,11 +32,15 @@ func _process(delta):
 		move.x -= 1
 		$AnimatedSprite.flip_h = true
 		$Disc.position.x = -5
+		$Punch.position.x = -4.144
+		#$Punch._flip_h(true)
 		$Position2D.position.x = -5
 	if Input.is_action_pressed("right"):
 		move.x += 1
 		$AnimatedSprite.flip_h = false
 		$Disc.position.x = 5
+		$Punch.position.x = 4.144
+		#$Punch._flip_h(true)
 		$Position2D.position.x = 5
 	#normalize speed
 	if move.length() > 1:
@@ -83,6 +87,11 @@ func _process(delta):
 	
 	if weapon == -1:
 		$Punch.rotation = (- position + get_global_mouse_position()).angle()
+		print($Punch.rotation)
+		if $Punch.rotation > 1.57 || $Punch.rotation < -1.57:
+			$Punch.scale.y = -1
+		else: 
+			$Punch.scale.y = 1
 	
 	
 	if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right") :
