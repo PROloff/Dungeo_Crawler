@@ -126,6 +126,16 @@ func player_hit():
 	if life == 1:
 		$AnimatedSprite2.frame = 2
 
+func gain_life():
+	if life < 3:
+		life += 1
+	if life == 3:
+		$AnimatedSprite2.frame = 0
+	if life == 2:
+		$AnimatedSprite2.frame = 1
+	if life == 1:
+		$AnimatedSprite2.frame = 2
+
 	
 func _get_Position():
 	return global_position
