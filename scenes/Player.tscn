@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Character/Idle/Idle1.png" type="Texture" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://assets/hearts/Hearts2.png" type="Texture" id=25]
 [ext_resource path="res://assets/hearts/Hearts3.png" type="Texture" id=26]
 [ext_resource path="res://assets/hearts/Hearts4.png" type="Texture" id=27]
+[ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.71314, 6.54097 )
@@ -72,7 +73,7 @@ position = Vector2( 5.02, 3.56 )
 position = Vector2( 0.0750465, 0 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Punch" parent="." instance=ExtResource( 17 )]
@@ -106,3 +107,6 @@ frames = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="BulletHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 28 )
