@@ -21,11 +21,11 @@
 [ext_resource path="res://scenes/Rooms/Room20.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/Rooms/Finish.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/Rooms/Room12.tscn" type="PackedScene" id=21]
-[ext_resource path="res://assets/Tileset/Casino.tres" type="TileSet" id=22]
-[ext_resource path="res://scenes/Slotmachine(POSOFPLAYER).tscn" type="PackedScene" id=23]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=24]
-[ext_resource path="res://scenes/Leben.tscn" type="PackedScene" id=25]
-[ext_resource path="res://scenes/END2.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/Slotmachine(POSOFPLAYER).tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/Leben.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/END2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/Tileset/Casino.tres" type="TileSet" id=26]
 
 [node name="KI" type="Node2D"]
 script = ExtResource( 1 )
@@ -90,153 +90,146 @@ position = Vector2( 2240, 1280 )
 [node name="Room12" parent="." instance=ExtResource( 21 )]
 position = Vector2( 896, 768 )
 
-[node name="TileMap" type="TileMap" parent="."]
-visible = false
-tile_set = ExtResource( 22 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 11, 12, 0, 12, 12, 0, 13, 12, 0, 14, 12, 0, 15, 12, 0, 16, 12, 0, 17, 12, 0, 18, 12, 0, 19, 12, 0, 20, 12, 0, 21, 12, 0, 22, 12, 0, 23, 12, 0, 24, 12, 0, 25, 12, 0, 26, 12, 0, 27, 12, 0, 28, 12, 0, 29, 12, 0, 30, 12, 0, 31, 12, 0, 32, 12, 0, 33, 12, 0, 34, 12, 0, 35, 12, 0, 36, 12, 0, 37, 12, 0, 38, 12, 0, 39, 12, 0, 40, 12, 0, 41, 12, 0, 42, 12, 0, 43, 12, 0, 44, 12, 0, 45, 12, 0, 46, 12, 0, 47, 12, 0, 48, 12, 0, 49, 12, 0, 50, 12, 0, 51, 12, 0, 52, 12, 0, 53, 12, 0, 327680, 14, 0, 393216, 14, 0, 393271, 15, 0, 458752, 14, 0, 458807, 15, 0, 524288, 14, 0, 524343, 15, 0, 589824, 14, 0, 589879, 15, 0, 655360, 14, 0, 720896, 14, 0, 983051, 17, 0, 983052, 17, 0, 983053, 17, 0, 983054, 17, 0, 983055, 17, 0, 983056, 17, 0, 1048641, 12, 0, 1048642, 12, 0, 1048643, 12, 0, 1048644, 12, 0, 1048645, 12, 0, 1048646, 12, 0, 1048647, 12, 0, 1048648, 12, 0, 1048649, 12, 0, 1048650, 12, 0, 1048651, 12, 0, 1048652, 12, 0, 1048653, 12, 0, 1048654, 12, 0, 1048668, 12, 0, 1048669, 12, 0, 1048670, 12, 0, 1048671, 12, 0, 1048672, 12, 0, 1048673, 12, 0, 1048674, 12, 0, 1048675, 12, 0, 1048676, 12, 0, 1048677, 12, 0, 1048678, 12, 0, 1048679, 12, 0, 1048680, 12, 0, 1376367, 15, 0, 1441820, 14, 0, 1441903, 15, 0, 1507356, 14, 0, 1507439, 15, 0, 1572892, 14, 0, 1572975, 15, 0, 1638428, 14, 0, 1638511, 15, 0, 1704047, 15, 0, 2031683, 17, 0, 2031684, 17, 0, 2031685, 17, 0, 2031686, 17, 0, 2031687, 17, 0, 2031688, 17, 0, 2424887, 15, 0, 2424916, 14, 0, 2424943, 15, 0, 2490396, 14, 0, 2490423, 15, 0, 2490452, 14, 0, 2490479, 15, 0, 2555932, 14, 0, 2555959, 15, 0, 2555988, 14, 0, 2556015, 15, 0, 2621468, 14, 0, 2621495, 15, 0, 2621524, 14, 0, 2621551, 15, 0, 2687004, 14, 0, 2687031, 15, 0, 2687060, 14, 0, 2687087, 15, 0, 2752540, 14, 0, 2752567, 15, 0, 2752596, 14, 0, 2752623, 15, 0, 2818103, 15, 0, 2818132, 14, 0, 3145793, 12, 0, 3145794, 12, 0, 3145795, 12, 0, 3145796, 12, 0, 3145797, 12, 0, 3145798, 12, 0, 3145799, 12, 0, 3145800, 12, 0, 3145801, 12, 0, 3145802, 12, 0, 3145851, 12, 0, 3145852, 12, 0, 3145853, 12, 0, 3145854, 12, 0, 3145855, 12, 0, 3145856, 12, 0, 3145857, 12, 0, 3473436, 14, 0, 3538972, 14, 0, 3539083, 15, 0, 3604508, 14, 0, 3604619, 15, 0, 3670044, 14, 0, 3670155, 15, 0, 3735580, 14, 0, 3735691, 15, 0, 3801227, 15, 0, 4128835, 17, 0, 4128836, 17, 0, 4128837, 17, 0, 4128838, 17, 0, 4128839, 17, 0, 4128840, 17, 0, 4522012, 14, 0, 4587548, 14, 0, 4587575, 15, 0, 4587604, 14, 0, 4587659, 15, 0, 4653084, 14, 0, 4653111, 15, 0, 4653140, 14, 0, 4653195, 15, 0, 4718620, 14, 0, 4718647, 15, 0, 4718676, 14, 0, 4718731, 15, 0, 4784156, 14, 0, 4784183, 15, 0, 4784212, 14, 0, 4784267, 15, 0, 4849719, 15, 0, 4849803, 15, 0, 5177384, 17, 0, 5177385, 17, 0, 5177386, 17, 0, 5177387, 17, 0, 5177388, 17, 0, 5177440, 17, 0, 5177441, 17, 0, 5177442, 17, 0, 5177443, 17, 0, 5177444, 17, 0, 5177445, 17, 0, 5177446, 17, 0, 5177468, 17, 0, 5177469, 17, 0, 5177470, 17, 0, 5177471, 17, 0, 5177472, 17, 0 )
-
-[node name="Slotmachine(POSOFPLAYER)" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1848.85, 900.172 )
 
-[node name="Slotmachine(POSOFPLAYER)26" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)26" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1287.82, 810.564 )
 
-[node name="Slotmachine(POSOFPLAYER)27" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)27" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2442.99, 607.971 )
 
-[node name="Slotmachine(POSOFPLAYER)24" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)24" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1059.9, 1356.01 )
 
-[node name="Slotmachine(POSOFPLAYER)25" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)25" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1116.39, 1453.41 )
 
-[node name="Slotmachine(POSOFPLAYER)22" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)22" parent="." instance=ExtResource( 22 )]
 position = Vector2( 539.783, 1393.02 )
 
-[node name="Slotmachine(POSOFPLAYER)23" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)23" parent="." instance=ExtResource( 22 )]
 position = Vector2( 668.352, 1231.33 )
 
-[node name="Slotmachine(POSOFPLAYER)18" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)18" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2012.48, 685.892 )
 
-[node name="Slotmachine(POSOFPLAYER)19" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)19" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2174.16, 890.433 )
 
-[node name="Slotmachine(POSOFPLAYER)20" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)20" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2008.58, 989.781 )
 
-[node name="Slotmachine(POSOFPLAYER)21" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)21" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1895.6, 1410.55 )
 
-[node name="Slotmachine(POSOFPLAYER)2" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)2" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2020.27, 896.277 )
 
-[node name="Slotmachine(POSOFPLAYER)3" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)3" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2396.24, 627.451 )
 
-[node name="Slotmachine(POSOFPLAYER)4" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)4" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2022.22, 623.555 )
 
-[node name="Slotmachine(POSOFPLAYER)5" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)5" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1733.91, 1402.76 )
 
-[node name="Slotmachine(POSOFPLAYER)6" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)6" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1642.36, 1418.34 )
 
-[node name="Slotmachine(POSOFPLAYER)7" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)7" parent="." instance=ExtResource( 22 )]
 position = Vector2( 711.208, 1431.98 )
 
-[node name="Slotmachine(POSOFPLAYER)8" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)8" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1472.88, 1420.29 )
 
-[node name="Slotmachine(POSOFPLAYER)9" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)9" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1054.25, 940.643 )
 
-[node name="Slotmachine(POSOFPLAYER)10" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)10" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1586.9, 882.343 )
 
-[node name="Slotmachine(POSOFPLAYER)11" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)11" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1128.45, 376.189 )
 
-[node name="Slotmachine(POSOFPLAYER)12" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)12" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2058.61, 450.389 )
 
-[node name="Slotmachine(POSOFPLAYER)13" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)13" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1851.91, 341.739 )
 
-[node name="Slotmachine(POSOFPLAYER)14" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)14" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1650.5, 135.037 )
 
-[node name="Slotmachine(POSOFPLAYER)15" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)15" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1435.85, 127.087 )
 
-[node name="Slotmachine(POSOFPLAYER)16" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)16" parent="." instance=ExtResource( 22 )]
 position = Vector2( 556.045, 368.239 )
 
-[node name="Slotmachine(POSOFPLAYER)17" parent="." instance=ExtResource( 23 )]
+[node name="Slotmachine(POSOFPLAYER)17" parent="." instance=ExtResource( 22 )]
 position = Vector2( 810.447, 378.839 )
 
-[node name="Player" parent="." instance=ExtResource( 24 )]
+[node name="Player" parent="." instance=ExtResource( 23 )]
 position = Vector2( 678.206, 622.887 )
 
-[node name="Leben4" parent="." instance=ExtResource( 25 )]
+[node name="Leben4" parent="." instance=ExtResource( 24 )]
 position = Vector2( 682.555, 317.998 )
 
-[node name="Leben5" parent="." instance=ExtResource( 25 )]
+[node name="Leben5" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1122.8, 643.316 )
 
-[node name="Leben6" parent="." instance=ExtResource( 25 )]
+[node name="Leben6" parent="." instance=ExtResource( 24 )]
 position = Vector2( 2077.33, 633.576 )
 
-[node name="Leben7" parent="." instance=ExtResource( 25 )]
+[node name="Leben7" parent="." instance=ExtResource( 24 )]
 position = Vector2( 2143.56, 380.335 )
 
-[node name="Leben8" parent="." instance=ExtResource( 25 )]
+[node name="Leben8" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1165.66, 843.961 )
 
-[node name="Leben9" parent="." instance=ExtResource( 25 )]
+[node name="Leben9" parent="." instance=ExtResource( 24 )]
 position = Vector2( 666.97, 902.401 )
 
-[node name="Leben10" parent="." instance=ExtResource( 25 )]
+[node name="Leben10" parent="." instance=ExtResource( 24 )]
 position = Vector2( 666.97, 1132.27 )
 
-[node name="Leben11" parent="." instance=ExtResource( 25 )]
+[node name="Leben11" parent="." instance=ExtResource( 24 )]
 position = Vector2( 659.178, 1395.25 )
 
-[node name="Leben12" parent="." instance=ExtResource( 25 )]
+[node name="Leben12" parent="." instance=ExtResource( 24 )]
 position = Vector2( 2016.94, 1428.36 )
 
-[node name="Leben13" parent="." instance=ExtResource( 25 )]
+[node name="Leben13" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1116.96, 1321.22 )
 
-[node name="Leben14" parent="." instance=ExtResource( 25 )]
+[node name="Leben14" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1565, 1348.5 )
 
-[node name="Leben15" parent="." instance=ExtResource( 25 )]
+[node name="Leben15" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1477.34, 894.609 )
 
-[node name="Leben16" parent="." instance=ExtResource( 25 )]
+[node name="Leben16" parent="." instance=ExtResource( 24 )]
 position = Vector2( 2332.52, 653.056 )
 
-[node name="Leben17" parent="." instance=ExtResource( 25 )]
+[node name="Leben17" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1640.98, 358.907 )
 
-[node name="Leben18" parent="." instance=ExtResource( 25 )]
+[node name="Leben18" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1572.79, 130.99 )
 
-[node name="Leben19" parent="." instance=ExtResource( 25 )]
+[node name="Leben19" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1064.36, 380.335 )
 
-[node name="Leben20" parent="." instance=ExtResource( 25 )]
+[node name="Leben20" parent="." instance=ExtResource( 24 )]
 position = Vector2( 653.334, 655.004 )
 
-[node name="END" parent="." instance=ExtResource( 26 )]
+[node name="END" parent="." instance=ExtResource( 25 )]
 position = Vector2( 2455.07, 1418.97 )
 
 [node name="TileMap2" type="TileMap" parent="."]
-tile_set = ExtResource( 22 )
+tile_set = ExtResource( 26 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 97, 12, 0, 98, 12, 0, 262129, 14, 0, 327665, 14, 0, 393201, 14, 0, 327764, 14, 0, 393300, 14, 0, 393327, 15, 0, 458836, 14, 0, 458863, 15, 0, 524372, 14, 0, 524399, 15, 0, 589908, 14, 0, 589935, 15, 0, 655444, 14, 0, 1048617, 12, 0, 1048618, 12, 0, 1048645, 12, 0, 1048646, 12, 0, 1048701, 12, 0, 1048702, 12, 0, 1441931, 15, 0, 1507356, 14, 0, 1507467, 15, 0, 1572892, 14, 0, 1573003, 15, 0, 1638539, 15, 0, 1704075, 15, 0, 2031713, 17, 0, 2031714, 17, 0, 2031715, 17, 0, 2097305, 12, 0, 2097306, 12, 0, 2490480, 14, 0, 2490535, 15, 0, 2555932, 14, 0, 2555987, 15, 0, 2556016, 14, 0, 2556071, 15, 0, 2621468, 14, 0, 2621523, 15, 0, 2621552, 14, 0, 2621607, 15, 0, 2687059, 15, 0, 2687088, 14, 0, 2687143, 15, 0, 2752679, 15, 0, 3080345, 17, 0, 3080346, 17, 0, 3080347, 17, 0, 3145825, 12, 0, 3145826, 12, 0, 3539083, 15, 0, 3604508, 14, 0, 3604619, 15, 0, 3670044, 14, 0, 3670155, 15, 0, 3735580, 14, 0, 3735691, 15, 0, 4128836, 17, 0, 4128837, 17, 0, 4128838, 17, 0, 4128893, 17, 0, 4128894, 17, 0, 4128895, 17, 0, 4456532, 14, 0, 4522068, 14, 0, 4587575, 15, 0, 4587604, 14, 0, 4653084, 14, 0, 4653111, 15, 0, 4653140, 14, 0, 4653167, 15, 0, 4718620, 14, 0, 4718647, 15, 0, 4718676, 14, 0, 4718703, 15, 0, 4784183, 15, 0, 4784212, 14, 0, 4784239, 15, 0, 4849748, 14, 0, 4849775, 15, 0, 4915284, 14, 0, 5242948, 12, 0, 5242949, 12, 0, 5242950, 12, 0, 5243005, 12, 0, 5243006, 12, 0, 5243007, 12, 0, 5243033, 12, 0, 5243034, 12, 0, 5701660, 14, 0, 5701799, 15, 0, 5767196, 14, 0, 5767335, 15, 0, 5832732, 14, 0, 5832871, 15, 0, 6225961, 17, 0, 6225962, 17, 0, 6225989, 17, 0, 6225990, 17, 0, 6226017, 17, 0, 6226018, 17, 0, 6226045, 17, 0, 6226046, 17, 0, 6226073, 17, 0, 6226074, 17, 0, 6226075, 17, 0 )
