@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/Idle/Slot_Idle1.png" type="Texture" id=2]
@@ -29,9 +29,7 @@
 [ext_resource path="res://assets/Idle/Slot_Idle26.png" type="Texture" id=27]
 [ext_resource path="res://assets/Walk/Slot_Walk1.png" type="Texture" id=28]
 [ext_resource path="res://assets/Walk/Slot_Walk2.png" type="Texture" id=29]
-[ext_resource path="res://assets/Walk/Slot_Walk3.png" type="Texture" id=30]
-[ext_resource path="res://assets/Walk/Slot_Walk4.png" type="Texture" id=31]
-[ext_resource path="res://assets/sounds/player/ChipDrop.wav" type="AudioStream" id=32]
+[ext_resource path="res://assets/sounds/player/ChipDrop.wav" type="AudioStream" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.46713, 8.38846 )
@@ -43,10 +41,10 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "walk",
-"speed": 7.0
+"speed": 4.0
 } ]
 
 [node name="Enemy" type="KinematicBody2D"]
@@ -61,7 +59,8 @@ shape = SubResource( 1 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 32 )
+stream = ExtResource( 30 )

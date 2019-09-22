@@ -6,6 +6,7 @@ var PLAYERPOSX
 var PLAYERPOSY
 var VIEWDISTANCE = 0
 var MOVEDISTANCE = 0
+var FARDISTANCE = 256
 var SPEED = 40
 var move = Vector2(0,0)
 var life = 3
@@ -36,7 +37,7 @@ func _calculate_move():
 	var deltaX = PLAYERPOSX - posX
 	move.x = deltaX
 	move.y = deltaY
-	if move.length() < VIEWDISTANCE:
+	if move.length() < VIEWDISTANCE || move.length() > FARDISTANCE:
 		move.x = 0
 		move.y = 0
 		$AnimatedSprite.play("idle")
