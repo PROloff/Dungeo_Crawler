@@ -34,3 +34,5 @@ func check_for_hit():
 		if body.has_method("player_hit"):
 			body.player_hit()
 			queue_free()
+		elif !body.has_method("is_hit"):
+			queue_free()

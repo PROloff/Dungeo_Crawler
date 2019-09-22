@@ -59,18 +59,13 @@ margin_right = 448.0
 margin_bottom = 242.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "- Game Mechanics -
-Jan L.
+text = "- Programming -
+Miguel D.
+Paul R.
 Anton A.
 
-- Grafics Design -
+- Grafics -
 Marten A.
-
-- Sound Design -
-Miguel D.
-
-- Artificial Intelligence -
-Paul R.
 
 - Level Design -
 Christian A."
@@ -84,18 +79,13 @@ margin_top = 2.0
 margin_right = -1.0
 margin_bottom = 194.0
 custom_fonts/font = SubResource( 3 )
-text = "- Game Mechanics -
-Jan L.
+text = "- Programming -
+Miguel D.
+Paul R.
 Anton A.
 
-- Grafics Design -
+- Grafics -
 Marten A.
-
-- Sound Design -
-Miguel D.
-
-- Artificial Intelligence -
-Paul R.
 
 - Level Design -
 Christian A."

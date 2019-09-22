@@ -33,3 +33,5 @@ func check_for_hit():
 			bulletHitSound.play()
 			body.is_hit(2)
 			queue_free()
+		elif !body.has_method("player_hit"):
+			queue_free()
