@@ -17,7 +17,7 @@ const BULLET = preload("res://scenes/Bullet.tscn")
 var bulletcooldown = 0
 var rollDirection = Vector2(0,0)
 var rollCounter = 0
-var life = 3
+var life = 5
 var weapon = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -122,19 +122,29 @@ func player_hit():
 	if life == 0:
 		get_tree().change_scene("res://scenes/End Screen.tscn")
 	if life == 2:
-		$AnimatedSprite2.frame = 1
+		$AnimatedSprite2.frame = 3
 	if life == 1:
+		$AnimatedSprite2.frame = 4
+	if life == 3:
 		$AnimatedSprite2.frame = 2
+	if life == 4:
+		$AnimatedSprite2.frame = 1
+	if life == 5:
+		$AnimatedSprite2.frame = 0
 
 func gain_life():
-	if life < 3:
+	if life < 5:
 		life += 1
 	if life == 3:
-		$AnimatedSprite2.frame = 0
-	if life == 2:
-		$AnimatedSprite2.frame = 1
-	if life == 1:
 		$AnimatedSprite2.frame = 2
+	if life == 2:
+		$AnimatedSprite2.frame = 3
+	if life == 1:
+		$AnimatedSprite2.frame = 4
+	if life == 4:
+		$AnimatedSprite2.frame = 1
+	if life == 5:
+		$AnimatedSprite2.frame = 0
 
 	
 func _get_Position():

@@ -12,4 +12,4 @@ func _ready():
 func _process(delta):
 	for body in get_overlapping_bodies():
 		if body.has_method("player_hit"):
-			get_tree().change_scene("res://scenes/Game2.tscn")
+			get_tree().change_scene("res://scenes/Credits.tscn")
