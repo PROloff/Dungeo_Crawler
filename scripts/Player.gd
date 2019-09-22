@@ -121,6 +121,10 @@ func player_hit():
 	life -= 1
 	if life == 0:
 		get_tree().change_scene("res://scenes/End Screen.tscn")
+	if life == 2:
+		$AnimatedSprite2.frame = 1
+	if life == 1:
+		$AnimatedSprite2.frame = 2
 
 	
 func _get_Position():

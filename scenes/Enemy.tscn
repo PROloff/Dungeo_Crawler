@@ -59,7 +59,7 @@ shape = SubResource( 1 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
+frame = 20
 playing = true
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
