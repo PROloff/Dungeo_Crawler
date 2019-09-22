@@ -22,9 +22,9 @@
 [ext_resource path="res://scenes/Rooms/Finish.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/Rooms/Room12.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/Slotmachine(POSOFPLAYER).tscn" type="PackedScene" id=22]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=23]
-[ext_resource path="res://scenes/Leben.tscn" type="PackedScene" id=24]
-[ext_resource path="res://scenes/END2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/Leben.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/END2.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/Tileset/Casino.tres" type="TileSet" id=26]
 
 [node name="KI" type="Node2D"]
@@ -171,62 +171,62 @@ position = Vector2( 556.045, 368.239 )
 [node name="Slotmachine(POSOFPLAYER)17" parent="." instance=ExtResource( 22 )]
 position = Vector2( 810.447, 378.839 )
 
-[node name="Player" parent="." instance=ExtResource( 23 )]
-position = Vector2( 678.206, 622.887 )
-
-[node name="Leben4" parent="." instance=ExtResource( 24 )]
+[node name="Leben4" parent="." instance=ExtResource( 23 )]
 position = Vector2( 682.555, 317.998 )
 
-[node name="Leben5" parent="." instance=ExtResource( 24 )]
+[node name="Leben5" parent="." instance=ExtResource( 23 )]
 position = Vector2( 1122.8, 643.316 )
 
-[node name="Leben6" parent="." instance=ExtResource( 24 )]
+[node name="Leben6" parent="." instance=ExtResource( 23 )]
 position = Vector2( 2077.33, 633.576 )
 
-[node name="Leben7" parent="." instance=ExtResource( 24 )]
+[node name="Leben7" parent="." instance=ExtResource( 23 )]
 position = Vector2( 2143.56, 380.335 )
 
-[node name="Leben8" parent="." instance=ExtResource( 24 )]
+[node name="Leben8" parent="." instance=ExtResource( 23 )]
 position = Vector2( 1165.66, 843.961 )
 
-[node name="Leben9" parent="." instance=ExtResource( 24 )]
+[node name="Leben9" parent="." instance=ExtResource( 23 )]
 position = Vector2( 666.97, 902.401 )
 
-[node name="Leben10" parent="." instance=ExtResource( 24 )]
+[node name="Leben10" parent="." instance=ExtResource( 23 )]
 position = Vector2( 666.97, 1132.27 )
 
-[node name="Leben11" parent="." instance=ExtResource( 24 )]
+[node name="Leben11" parent="." instance=ExtResource( 23 )]
 position = Vector2( 659.178, 1395.25 )
 
-[node name="Leben12" parent="." instance=ExtResource( 24 )]
+[node name="Leben12" parent="." instance=ExtResource( 23 )]
 position = Vector2( 2016.94, 1428.36 )
 
-[node name="Leben13" parent="." instance=ExtResource( 24 )]
+[node name="Leben13" parent="." instance=ExtResource( 23 )]
 position = Vector2( 1116.96, 1321.22 )
 
-[node name="Leben14" parent="." instance=ExtResource( 24 )]
+[node name="Leben14" parent="." instance=ExtResource( 23 )]
 position = Vector2( 1565, 1348.5 )
 
-[node name="Leben15" parent="." instance=ExtResource( 24 )]
+[node name="Leben15" parent="." instance=ExtResource( 23 )]
 position = Vector2( 1477.34, 894.609 )
 
-[node name="Leben16" parent="." instance=ExtResource( 24 )]
+[node name="Leben16" parent="." instance=ExtResource( 23 )]
 position = Vector2( 2332.52, 653.056 )
 
-[node name="Leben17" parent="." instance=ExtResource( 24 )]
+[node name="Leben17" parent="." instance=ExtResource( 23 )]
 position = Vector2( 1640.98, 358.907 )
 
-[node name="Leben18" parent="." instance=ExtResource( 24 )]
+[node name="Leben18" parent="." instance=ExtResource( 23 )]
 position = Vector2( 1572.79, 130.99 )
 
-[node name="Leben19" parent="." instance=ExtResource( 24 )]
+[node name="Leben19" parent="." instance=ExtResource( 23 )]
 position = Vector2( 1064.36, 380.335 )
 
-[node name="Leben20" parent="." instance=ExtResource( 24 )]
+[node name="Leben20" parent="." instance=ExtResource( 23 )]
 position = Vector2( 653.334, 655.004 )
 
-[node name="END" parent="." instance=ExtResource( 25 )]
+[node name="END" parent="." instance=ExtResource( 24 )]
 position = Vector2( 2455.07, 1418.97 )
+
+[node name="Player" parent="." instance=ExtResource( 25 )]
+position = Vector2( 678.206, 622.887 )
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = ExtResource( 26 )

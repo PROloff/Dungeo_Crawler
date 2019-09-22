@@ -50,7 +50,7 @@ func _calculate_move():
 
 func is_hit(var x):
 	life -= x
-	if life == 0:
+	if life <= 0:
 		queue_free()
 		deathSound.play()
 		get_parent()._destroy()

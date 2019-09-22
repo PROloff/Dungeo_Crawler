@@ -97,7 +97,6 @@ func _process(delta):
 	
 	if weapon == -1:
 		$Punch.rotation = (- position + get_global_mouse_position()).angle()
-		print($Punch.rotation)
 		if $Punch.rotation > 1.57 || $Punch.rotation < -1.57:
 			$Punch.scale.y = -1
 		else: 
