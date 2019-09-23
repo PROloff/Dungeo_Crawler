@@ -14,6 +14,7 @@ const BULLETCOOLDOWN = 30
 
 const BULLET = preload("res://scenes/Bullet.tscn")
 
+var keycount = 0
 var bulletcooldown = 0
 var rollDirection = Vector2(0,0)
 var rollCounter = 0
@@ -145,6 +146,11 @@ func gain_life():
 	if life == 5:
 		$AnimatedSprite2.frame = 0
 
+func gain_key():
+	keycount += 1
+
+func has_key():
+	return keycount > 0
 	
 func _get_Position():
 	return global_position

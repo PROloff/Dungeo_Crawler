@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/Scenes/KI.gd" type="Script" id=1]
 [ext_resource path="res://assets/Rooms/Room2.tscn" type="PackedScene" id=2]
@@ -17,8 +17,9 @@
 [ext_resource path="res://scenes/Rooms/Spawn.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/Tileset/Casino.tres" type="TileSet" id=16]
 [ext_resource path="res://scenes/END.tscn" type="PackedScene" id=17]
-[ext_resource path="res://scenes/Slotmachine.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/Key.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/Slotmachine.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=20]
 
 [node name="KI" type="Node2D"]
 script = ExtResource( 1 )
@@ -73,62 +74,65 @@ tile_data = PoolIntArray( 11, 12, 0, 12, 12, 0, 13, 12, 0, 14, 12, 0, 15, 12, 0,
 [node name="END" parent="." instance=ExtResource( 17 )]
 position = Vector2( 2013.38, 897.617 )
 
-[node name="Slotmachine(POSOFPLAYER)" parent="." instance=ExtResource( 18 )]
+[node name="Key" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1566.51, 379.944 )
+
+[node name="Slotmachine(POSOFPLAYER)" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1524.64, 686.182 )
 
-[node name="Slotmachine(POSOFPLAYER)2" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1738.53, 594.457 )
 
-[node name="Slotmachine(POSOFPLAYER)3" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)3" parent="." instance=ExtResource( 19 )]
 position = Vector2( 2104.3, 900.099 )
 
-[node name="Slotmachine(POSOFPLAYER)4" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)4" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1918.91, 893.418 )
 
-[node name="Slotmachine(POSOFPLAYER)5" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)5" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1459.62, 1059.38 )
 
-[node name="Slotmachine(POSOFPLAYER)6" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)6" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1476.8, 986.939 )
 
-[node name="Slotmachine(POSOFPLAYER)7" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)7" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1535.74, 983.256 )
 
-[node name="Slotmachine(POSOFPLAYER)8" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)8" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1466.98, 812.601 )
 
-[node name="Slotmachine(POSOFPLAYER)9" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)9" parent="." instance=ExtResource( 19 )]
 position = Vector2( 520.077, 902.613 )
 
-[node name="Slotmachine(POSOFPLAYER)10" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)10" parent="." instance=ExtResource( 19 )]
 position = Vector2( 805.686, 973.692 )
 
-[node name="Slotmachine(POSOFPLAYER)11" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)11" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1158.5, 980.154 )
 
-[node name="Slotmachine(POSOFPLAYER)12" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)12" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1080.96, 827.656 )
 
-[node name="Slotmachine(POSOFPLAYER)13" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)13" parent="." instance=ExtResource( 19 )]
 position = Vector2( 787.594, 901.32 )
 
-[node name="Slotmachine(POSOFPLAYER)14" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)14" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1562.02, 448.672 )
 
-[node name="Slotmachine(POSOFPLAYER)15" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)15" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1257.34, 392.568 )
 
-[node name="Slotmachine(POSOFPLAYER)16" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)16" parent="." instance=ExtResource( 19 )]
 position = Vector2( 988.872, 388.116 )
 
-[node name="Slotmachine(POSOFPLAYER)17" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)17" parent="." instance=ExtResource( 19 )]
 position = Vector2( 580.817, 43.1994 )
 
-[node name="Slotmachine(POSOFPLAYER)18" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)18" parent="." instance=ExtResource( 19 )]
 position = Vector2( 828.949, 209.913 )
 
-[node name="Slotmachine(POSOFPLAYER)19" parent="." instance=ExtResource( 18 )]
+[node name="Slotmachine(POSOFPLAYER)19" parent="." instance=ExtResource( 19 )]
 position = Vector2( 844.457, 460.629 )
 
-[node name="Player" parent="." instance=ExtResource( 19 )]
+[node name="Player" parent="." instance=ExtResource( 20 )]
 position = Vector2( 223.374, 127.65 )

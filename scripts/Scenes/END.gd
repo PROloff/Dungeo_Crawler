@@ -11,5 +11,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	for body in get_overlapping_bodies():
-		if body.has_method("player_hit"):
-			get_tree().change_scene("res://scenes/Game2.tscn")
+		if body.has_method("player_hit") && body.has_key():
+				get_tree().change_scene("res://scenes/Game2.tscn")
