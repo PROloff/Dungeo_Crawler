@@ -49,7 +49,7 @@ func _process(delta):
 		$Position2D.position.x = 5
 	#normalize speed
 	if move.length() > 1:
-		move *= 0.71
+		move = move.normalized()
 	if move.length() > 0:
 		if rollCounter > COOLDOWNLENGTH:
 			$AnimatedSprite.play("dash")

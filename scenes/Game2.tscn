@@ -1,8 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=2]
 [ext_resource path="res://scenes/KI2.tscn" type="PackedScene" id=3]
+
+
+
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=2]
 
-[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Objects/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Character/Idle/Idle1.png" type="Texture" id=2]
 [ext_resource path="res://assets/Character/Idle/Idle2.png" type="Texture" id=3]
 [ext_resource path="res://assets/Character/Idle/Idle3.png" type="Texture" id=4]
@@ -75,6 +75,7 @@ position = Vector2( 5.02, 3.56 )
 position = Vector2( 0.0750465, 0 )
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="Punch" parent="." instance=ExtResource( 17 )]

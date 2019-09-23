@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://scripts/KI.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Scenes/KI.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Rooms/Spawn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Rooms/Room1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Rooms/Room2.tscn" type="PackedScene" id=4]
@@ -21,7 +21,7 @@
 [ext_resource path="res://scenes/Rooms/Room20.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/Rooms/Finish.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/Rooms/Room12.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scenes/Slotmachine(POSOFPLAYER).tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/Slotmachine.tscn" type="PackedScene" id=22]
 [ext_resource path="res://scenes/Leben.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/END2.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=25]
@@ -188,39 +188,6 @@ position = Vector2( 1165.66, 843.961 )
 
 [node name="Leben9" parent="." instance=ExtResource( 23 )]
 position = Vector2( 666.97, 902.401 )
-
-[node name="Leben10" parent="." instance=ExtResource( 23 )]
-position = Vector2( 666.97, 1132.27 )
-
-[node name="Leben11" parent="." instance=ExtResource( 23 )]
-position = Vector2( 659.178, 1395.25 )
-
-[node name="Leben12" parent="." instance=ExtResource( 23 )]
-position = Vector2( 2016.94, 1428.36 )
-
-[node name="Leben13" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1116.96, 1321.22 )
-
-[node name="Leben14" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1565, 1348.5 )
-
-[node name="Leben15" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1477.34, 894.609 )
-
-[node name="Leben16" parent="." instance=ExtResource( 23 )]
-position = Vector2( 2332.52, 653.056 )
-
-[node name="Leben17" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1640.98, 358.907 )
-
-[node name="Leben18" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1572.79, 130.99 )
-
-[node name="Leben19" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1064.36, 380.335 )
-
-[node name="Leben20" parent="." instance=ExtResource( 23 )]
-position = Vector2( 653.334, 655.004 )
 
 [node name="END" parent="." instance=ExtResource( 24 )]
 position = Vector2( 2455.07, 1418.97 )

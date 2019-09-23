@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Objects/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://assets/filler.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/weapon/ChipGreen/ChipGreen_Spinning/ChipGreen_Spinning1.png" type="Texture" id=3]
 [ext_resource path="res://assets/weapon/ChipGreen/ChipGreen_Spinning/ChipGreen_Spinning2.png" type="Texture" id=4]
@@ -38,7 +38,7 @@ rect = Rect2( -4, -4, 8, 8 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "rotation"
-frame = 2
+frame = 1
 playing = true
 
 [node name="BulletHit" type="AudioStreamPlayer" parent="."]

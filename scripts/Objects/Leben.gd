@@ -14,3 +14,7 @@ func _process(delta):
 		if body.has_method("player_hit"):
 			body.gain_life()
 			queue_free()
+
+
+func set_postition(var pPosition):
+	position = pPosition	

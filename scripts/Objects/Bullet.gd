@@ -25,7 +25,7 @@ func _set_playerPosition(var pPosition):
 	move = get_global_mouse_position() - pPosition
 	
 	if move.length() > 1:
-		move *= 1/move.length()
+		move = move.normalized()
 	
 func check_for_hit():
 	for body in get_overlapping_bodies():
