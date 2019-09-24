@@ -18,13 +18,13 @@ var keycount = 0
 var bulletcooldown = 0
 var rollDirection = Vector2(0,0)
 var rollCounter = 0
-var life = 5
 var weapon = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	justin.play()
 	background.play()
+	update_life()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -118,33 +118,18 @@ func _process(delta):
 
 
 func player_hit():
-	life -= 1
-	if life == 0:
-		get_tree().change_scene("res://scenes/End Screen.tscn")
-	if life == 2:
-		$AnimatedSprite2.frame = 3
-	if life == 1:
-		$AnimatedSprite2.frame = 4
-	if life == 3:
-		$AnimatedSprite2.frame = 2
-	if life == 4:
-		$AnimatedSprite2.frame = 1
-	if life == 5:
-		$AnimatedSprite2.frame = 0
+	PlayerVariables.lose_life()
+	update_life()
 
 func gain_life():
-	if life < 5:
-		life += 1
-	if life == 3:
-		$AnimatedSprite2.frame = 2
-	if life == 2:
-		$AnimatedSprite2.frame = 3
-	if life == 1:
-		$AnimatedSprite2.frame = 4
-	if life == 4:
-		$AnimatedSprite2.frame = 1
-	if life == 5:
-		$AnimatedSprite2.frame = 0
+	PlayerVariables.gain_life()
+	update_life()
+
+func update_life():
+	var life = PlayerVariables.leben
+	$AnimatedSprite2.frame = life
+	if life == 0:
+		get_tree().change_scene("res://scenes/End Screen.tscn")
 
 func gain_key():
 	keycount += 1

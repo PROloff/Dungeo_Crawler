@@ -23,12 +23,12 @@
 [ext_resource path="res://assets/sounds/player/Running.wav" type="AudioStream" id=21]
 [ext_resource path="res://assets/sounds/Sieht man das ICED OUT.wav" type="AudioStream" id=22]
 [ext_resource path="res://assets/sounds/Soundtrack.wav" type="AudioStream" id=23]
-[ext_resource path="res://assets/hearts/Hearts1.png" type="Texture" id=24]
-[ext_resource path="res://assets/hearts/Hearts2.png" type="Texture" id=25]
-[ext_resource path="res://assets/hearts/Hearts3.png" type="Texture" id=26]
-[ext_resource path="res://assets/hearts/Hearts4.png" type="Texture" id=27]
-[ext_resource path="res://assets/hearts/Hearts5.png" type="Texture" id=28]
-[ext_resource path="res://assets/hearts/Hearts6.png" type="Texture" id=29]
+[ext_resource path="res://assets/hearts/Hearts6.png" type="Texture" id=24]
+[ext_resource path="res://assets/hearts/Hearts5.png" type="Texture" id=25]
+[ext_resource path="res://assets/hearts/Hearts4.png" type="Texture" id=26]
+[ext_resource path="res://assets/hearts/Hearts3.png" type="Texture" id=27]
+[ext_resource path="res://assets/hearts/Hearts2.png" type="Texture" id=28]
+[ext_resource path="res://assets/hearts/Hearts1.png" type="Texture" id=29]
 [ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -75,7 +75,7 @@ position = Vector2( 5.02, 3.56 )
 position = Vector2( 0.0750465, 0 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 4
+frame = 3
 playing = true
 
 [node name="Punch" parent="." instance=ExtResource( 17 )]
