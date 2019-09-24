@@ -4,9 +4,6 @@
 [ext_resource path="res://scenes/KI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=3]
 
-
-
-
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 
