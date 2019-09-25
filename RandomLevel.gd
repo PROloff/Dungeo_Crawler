@@ -33,6 +33,8 @@ const MAXROOMS = 6
 const MINROOMS = 4
 const CHANCE = 0.5
 const KEYCOUNT = 1
+const HEARTROOMCOUNT = 1
+const HEARTCHANCE = 0.5
 const CHANCEREDUCTION = 0.8 #how much the chance of placing a room decreases based on the neighbour count
 const ENEMYCHANCE = 0.3
 
@@ -44,6 +46,7 @@ onready var WALL_SOUTH = preload("res://scenes/Walls/wall_south.tscn")
 onready var WALL_EAST = preload("res://scenes/Walls/wall_east.tscn")
 onready var WALL_WEST = preload("res://scenes/Walls/wall_west.tscn")
 onready var ENEMY = preload("res://scenes/Slotmachine.tscn")
+onready var LEBEN = preload("res://scenes/Leben.tscn")
 
 func _ready():
 	generate_matrix()
@@ -56,8 +59,9 @@ func _ready():
 	place(3)
 	for i in (KEYCOUNT):
 		place(4)
+	for i in (HEARTROOMCOUNT):
+		place(5)
 	place_rooms()
-	print_matrix()
 	place_objects()
 	$KI.raise()
 
@@ -130,7 +134,7 @@ func place_rooms():
 						room = preload(PATH_SPAWN).instance()
 					3:
 						room = preload(PATH_FINISH).instance()
-					1, 4:
+					1, 4, 5:
 						match randi()%20+1:
 							1:
 								room = preload(PATH_ROOM1).instance()
@@ -176,11 +180,15 @@ func place_rooms():
 						if matrix[x][y] == 4:
 							ikey = randi()%5+1
 						for i in range(1, 6):
-							if randf() < ENEMYCHANCE && i != ikey:
+							if matrix[x][y] != 5 && randf() < ENEMYCHANCE && i != ikey:
 								var enemy = ENEMY.instance()
 								$KI.add_child(enemy)
 								enemy.position = room._get_position(i) + Vector2(448 * x, 256 * y)
-							if i == ikey:
+							elif matrix[x][y] == 5 && randf() < HEARTCHANCE:
+								var leben = LEBEN.instance()
+								$KI.add_child(leben)
+								leben.position = room._get_position(i) + Vector2(448 * x, 256 * y)
+							elif i == ikey:
 								var key = KEY.instance()
 								$KI.add_child(key)
 								key.position = room._get_position(i) + Vector2(448 * x, 256 * y)
