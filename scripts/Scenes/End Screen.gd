@@ -9,7 +9,7 @@ func _ready():
 func _on_Button_Start_pressed():
 #	clickSound.play()
 	PlayerVariables.reset_life()
-	get_tree().change_scene("res://scenes/Game.tscn")
+	get_tree().change_scene("res://scenes/RandomLevel.tscn")
 	pass # Replace with function body.
 
 

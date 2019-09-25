@@ -133,7 +133,7 @@ func place_rooms():
 					4:
 						room = preload(PATH_SPAWN).instance()
 					1:
-						match 1:
+						match randi()%20+1:
 							1:
 								room = preload(PATH_ROOM1).instance()
 							2:
