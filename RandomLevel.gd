@@ -27,10 +27,10 @@ const PATH_ROOM18 = "res://scenes/Rooms/Room18.tscn"
 const PATH_ROOM19 = "res://scenes/Rooms/Room19.tscn"
 const PATH_ROOM20 = "res://scenes/Rooms/Room20.tscn"
 
-const WIDTH = 7
-const HEIGHT = 7
-const MAXROOMS = 20
-const MINROOMS = 10
+const WIDTH = 3
+const HEIGHT = 3
+const MAXROOMS = 6
+const MINROOMS = 4
 const CHANCE = 0.5
 const KEYCOUNT = 1
 const CHANCEREDUCTION = 0.8 #how much the chance of placing a room decreases based on the neighbour count
@@ -130,9 +130,7 @@ func place_rooms():
 						room = preload(PATH_SPAWN).instance()
 					3:
 						room = preload(PATH_FINISH).instance()
-					4:
-						room = preload(PATH_SPAWN).instance()
-					1:
+					1, 4:
 						match randi()%20+1:
 							1:
 								room = preload(PATH_ROOM1).instance()
@@ -174,11 +172,18 @@ func place_rooms():
 								room = preload(PATH_ROOM19).instance()
 							20:
 								room = preload(PATH_ROOM20).instance()
+						var ikey = 0
+						if matrix[x][y] == 4:
+							ikey = randi()%5+1
 						for i in range(1, 6):
-							if randf() < ENEMYCHANCE:
+							if randf() < ENEMYCHANCE && i != ikey:
 								var enemy = ENEMY.instance()
 								$KI.add_child(enemy)
 								enemy.position = room._get_position(i) + Vector2(448 * x, 256 * y)
+							if i == ikey:
+								var key = KEY.instance()
+								$KI.add_child(key)
+								key.position = room._get_position(i) + Vector2(448 * x, 256 * y)
 				add_child(room)
 				room.position.x = 448 * x
 				room.position.y = 256 * y
@@ -218,8 +223,3 @@ func place_objects():
 				add_child(end)
 				end.position.x = 448 * x + 224
 				end.position.y = 256 * y + 128
-			if matrix[x][y] == 4:
-				var key = KEY.instance()
-				add_child(key)
-				key.position.x = 448 * x + 224
-				key.position.y = 256 * y + 128
