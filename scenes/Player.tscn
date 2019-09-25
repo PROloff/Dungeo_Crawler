@@ -75,7 +75,7 @@ position = Vector2( 5.02, 3.56 )
 position = Vector2( 0.0750465, 0 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Punch" parent="." instance=ExtResource( 17 )]

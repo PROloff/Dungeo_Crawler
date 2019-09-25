@@ -2,12 +2,16 @@ extends Node
 
 const MAXHP = 5
 
+var score = 0
 var leben
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	leben = MAXHP
 	pass # Replace with function body.
+
+func gain_score():
+	score += 1
 
 func gain_life():
 	if leben < MAXHP:
@@ -20,5 +24,6 @@ func lose_life():
 func is_dead():
 	return leben == 0
 
-func reset_life():
+func reset():
 	leben = MAXHP
+	score = 0

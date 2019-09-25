@@ -1,7 +1,8 @@
 extends Control
 #onready var clickSound=get_tree().get_root().get_node("Title Screen").get_node("Click")
 func _ready():
-	pass
+	$ScoreSchatten/Score.set_text("You beat " + String(PlayerVariables.score) + " stages")
+	$ScoreSchatten.set_text("You beat " + String(PlayerVariables.score) + " stages")
 
 #func _process(delta):
 #	pass

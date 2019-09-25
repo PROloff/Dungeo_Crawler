@@ -12,4 +12,6 @@ func _ready():
 func _process(delta):
 	for body in get_overlapping_bodies():
 		if body.has_method("player_hit") && body.has_key():
+				PlayerVariables.gain_score()
+				print(String(PlayerVariables.score))
 				get_tree().change_scene("res://scenes/RandomLevel.tscn")
