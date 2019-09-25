@@ -14,7 +14,11 @@ const CHANCEREDUCTION = 0.8 #how much the chance of placing a room decreases bas
 onready var ROOM = preload("res://scenes/Rooms/Spawn.tscn")
 onready var PLAYER = preload("res://scenes/Player.tscn")
 onready var END = preload("res://scenes/END2.tscn")
-onready var KEY = preload("res://scenes/KEY.tscn")
+onready var KEY = preload("res://scenes/Key.tscn")
+onready var WALL_NORTH = preload("res://scenes/Walls/wall_north.tscn")
+onready var WALL_SOUTH = preload("res://scenes/Walls/wall_south.tscn")
+onready var WALL_EAST = preload("res://scenes/Walls/wall_east.tscn")
+onready var WALL_WEST = preload("res://scenes/Walls/wall_west.tscn")
 
 func _ready():
 	generate_matrix()
@@ -95,11 +99,38 @@ func neighbour_count(var x, var y):
 func place_rooms():
 	for x in range(WIDTH):
 		for y in range(HEIGHT):
-			var room = ROOM.instance()
-			add_child(room)
-			room.position.x = 448 * x
-			room.position.y = 256 * y
+			if matrix[x][y] != 0:
+				var room = ROOM.instance()
+				add_child(room)
+				room.position.x = 448 * x
+				room.position.y = 256 * y
+				place_walls(x, y)
 
+func place_walls(var x, var y):
+	if x == 0:
+		add_wall(WALL_WEST, x, y)
+	elif matrix[x-1][y] == 0:
+		add_wall(WALL_WEST, x, y)
+	if x == WIDTH - 1:
+		add_wall(WALL_EAST, x, y)
+	elif matrix[x+1][y] == 0:
+		add_wall(WALL_EAST, x, y)
+	if y == 0:
+		add_wall(WALL_NORTH, x, y)
+	elif matrix[x][y-1] == 0:
+		add_wall(WALL_NORTH, x, y)
+	if y == HEIGHT - 1:
+		add_wall(WALL_SOUTH, x, y)
+	elif matrix[x][y+1] == 0:
+		add_wall(WALL_SOUTH, x, y)
+
+func add_wall(var wall_type, var x, var y):
+	print("add" + String(x) + String(y))
+	var wall = wall_type.instance()
+	add_child(wall)
+	wall.position.x = x * 448
+	wall.position.y = y * 256
+	
 func place_objects():
 	for x in range(WIDTH):
 		for y in range(HEIGHT):

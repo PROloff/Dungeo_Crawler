@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Tileset/Casino.tres" type="TileSet" id=1]
+
+[node name="wall_east" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 262171, 15, 0, 327707, 15, 0, 393243, 15, 0, 458779, 15, 0, 524315, 15, 0, 589851, 15, 0, 655387, 15, 0, 720923, 15, 0, 786459, 15, 0 )
