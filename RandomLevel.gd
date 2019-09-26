@@ -4,6 +4,7 @@ var counter = 0
 var matrix = []
 var maxrooms
 var minrooms
+var todo = []
 
 const PATH_SPAWN = "res://scenes/Rooms/Spawn.tscn"
 const PATH_FINISH = "res://scenes/Rooms/Finish.tscn"
@@ -33,11 +34,11 @@ const WIDTH = 11
 const HEIGHT = 11
 const MAXROOMS = 15
 const MINROOMS = 10
-const CHANCE = 0.5
+const CHANCE = 0.8
 const KEYCOUNT = 1
 const HEARTROOMCOUNT = 3
 const HEARTCHANCE = 0.5
-const CHANCEREDUCTION = 0.8 #how much the chance of placing a room decreases based on the neighbour count
+const CHANCEREDUCTION = 0.5 #how much the chance of placing a room decreases based on the neighbour count
 const ENEMYCHANCE = 0.3
 
 #onready var ROOM = preload("res://scenes/Rooms/Spawn.tscn")
@@ -57,8 +58,11 @@ func _ready():
 	randomize()
 	while counter < minrooms:
 		clear_matrix()
+		todo.clear()
+		todo.append(Vector2(WIDTH/2, HEIGHT/2))
 		counter = 0
-		add_room(WIDTH/2, HEIGHT/2)
+		while !todo.empty() && counter < maxrooms:
+			add_room()
 	place(2)
 	place(3)
 	for i in (KEYCOUNT):
@@ -84,20 +88,23 @@ func clear_matrix():
 		for x in (WIDTH):
 			matrix[y][x] = 0
 
-func add_room(var x, var y):
+func add_room():
+	var x = todo.front().x
+	var y = todo.front().y
+	todo.pop_front()
 	if counter < maxrooms:
 		if matrix[x][y] == 0 && randf() < CHANCE - neighbour_count(x, y) * CHANCEREDUCTION * CHANCE:
 			matrix[x][y] = 1
 			counter += 1
 			if x > 0 && x < WIDTH-1 && y > 0 && y < HEIGHT-1:
 				if matrix[x-1][y] == 0:
-					add_room(x-1, y)
+					todo.append(Vector2(x-1, y))
 				if matrix[x+1][y] == 0:
-					add_room(x+1, y)
+					todo.append(Vector2(x+1, y))
 				if matrix[x][y-1] == 0:
-					add_room(x, y-1)
+					todo.append(Vector2(x, y-1))
 				if matrix[x][y+1] == 0:
-					add_room(x, y+1)
+					todo.append(Vector2(x, y+1))
 
 func print_matrix():
 	var output = ""
@@ -124,9 +131,9 @@ func neighbour_count(var x, var y):
 		i += 1
 	if (x < WIDTH - 1 && matrix[x+1][y] != 0):
 		i += 1
-	if (y > 0 && matrix[y-1][y] != 0):
+	if (y > 0 && matrix[x][y-1] != 0):
 		i += 1
-	if (y < HEIGHT - 1 && matrix[y+1][y] != 0):
+	if (y < HEIGHT - 1 && matrix[x][y+1] != 0):
 		i += 1
 	return i
 
