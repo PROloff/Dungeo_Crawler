@@ -6,10 +6,10 @@ onready var player=get_node("AudioStreamPlayer")
 onready var justin=get_node("ICEDOUT")
 onready var background=get_node("Background")
 
-const SPEED = 100
+const SPEED = 150
 const ROLLSPEED = 300
-const ROLLLENGTH = 40
-const COOLDOWNLENGTH = 40
+const ROLLLENGTH = 20
+const COOLDOWNLENGTH = 0
 const BULLETCOOLDOWN = 30
 
 const BULLET = preload("res://scenes/Bullet.tscn")
@@ -135,7 +135,7 @@ func gain_key():
 	keycount += 1
 
 func has_key():
-	return keycount > 0
+	return keycount == PlayerVariables.keysneeded
 	
 func _get_Position():
 	return global_position

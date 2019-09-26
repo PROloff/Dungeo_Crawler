@@ -4,6 +4,7 @@ const MAXHP = 5
 
 var score = 0
 var leben
+var keysneeded
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

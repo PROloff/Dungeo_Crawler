@@ -2,8 +2,6 @@ extends Node2D
 
 var counter = 0
 var matrix = []
-var maxrooms
-var minrooms
 var todo = []
 
 const PATH_SPAWN = "res://scenes/Rooms/Spawn.tscn"
@@ -30,16 +28,16 @@ const PATH_ROOM19 = "res://scenes/Rooms/Room19.tscn"
 const PATH_ROOM20 = "res://scenes/Rooms/Room20.tscn"
 
 
-const WIDTH = 11
-const HEIGHT = 11
-const MAXROOMS = 15
-const MINROOMS = 10
+var WIDTH = 11
+var HEIGHT = 11
+var MAXROOMS = 20
+var MINROOMS = 10
 const CHANCE = 0.8
-const KEYCOUNT = 1
+const KEYCOUNT = 2
 const HEARTROOMCOUNT = 3
 const HEARTCHANCE = 0.5
-const CHANCEREDUCTION = 0.5 #how much the chance of placing a room decreases based on the neighbour count
-const ENEMYCHANCE = 0.3
+const CHANCEREDUCTION = 0.4 #how much the chance of placing a room decreases based on the neighbour count
+const ENEMYCHANCE = 0.4
 
 #onready var ROOM = preload("res://scenes/Rooms/Spawn.tscn")
 onready var END = preload("res://scenes/EndGenerated.tscn")
@@ -53,15 +51,13 @@ onready var LEBEN = preload("res://scenes/Leben.tscn")
 
 func _ready():
 	generate_matrix()
-	maxrooms = MAXROOMS
-	minrooms = MINROOMS
 	randomize()
-	while counter < minrooms:
+	while counter < MINROOMS:
 		clear_matrix()
 		todo.clear()
 		todo.append(Vector2(WIDTH/2, HEIGHT/2))
 		counter = 0
-		while !todo.empty() && counter < maxrooms:
+		while !todo.empty() && counter < MAXROOMS:
 			add_room()
 	place(2)
 	place(3)
@@ -74,6 +70,8 @@ func _ready():
 	$KI.raise()
 	print(counter)
 	print_matrix()
+#	$Camera2D.adjust_camera()
+	PlayerVariables.keysneeded = KEYCOUNT
 
 func generate_matrix():
 	for x in range(WIDTH):
@@ -92,7 +90,7 @@ func add_room():
 	var x = todo.front().x
 	var y = todo.front().y
 	todo.pop_front()
-	if counter < maxrooms:
+	if counter < MAXROOMS:
 		if matrix[x][y] == 0 && randf() < CHANCE - neighbour_count(x, y) * CHANCEREDUCTION * CHANCE:
 			matrix[x][y] = 1
 			counter += 1
