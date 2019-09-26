@@ -2,10 +2,11 @@ extends Node2D
 
 var counter = 0
 var matrix = []
+var maxrooms
+var minrooms
 
 const PATH_SPAWN = "res://scenes/Rooms/Spawn.tscn"
 const PATH_FINISH = "res://scenes/Rooms/Finish.tscn"
-
 const PATH_ROOM1 = "res://scenes/Rooms/Room1.tscn"
 const PATH_ROOM2 = "res://scenes/Rooms/Room2.tscn"
 const PATH_ROOM3 = "res://scenes/Rooms/Room3.tscn"
@@ -27,13 +28,14 @@ const PATH_ROOM18 = "res://scenes/Rooms/Room18.tscn"
 const PATH_ROOM19 = "res://scenes/Rooms/Room19.tscn"
 const PATH_ROOM20 = "res://scenes/Rooms/Room20.tscn"
 
-const WIDTH = 3
-const HEIGHT = 3
-const MAXROOMS = 6
-const MINROOMS = 4
+
+const WIDTH = 11
+const HEIGHT = 11
+const MAXROOMS = 15
+const MINROOMS = 10
 const CHANCE = 0.5
 const KEYCOUNT = 1
-const HEARTROOMCOUNT = 1
+const HEARTROOMCOUNT = 3
 const HEARTCHANCE = 0.5
 const CHANCEREDUCTION = 0.8 #how much the chance of placing a room decreases based on the neighbour count
 const ENEMYCHANCE = 0.3
@@ -50,8 +52,10 @@ onready var LEBEN = preload("res://scenes/Leben.tscn")
 
 func _ready():
 	generate_matrix()
+	maxrooms = MAXROOMS
+	minrooms = MINROOMS
 	randomize()
-	while counter < MINROOMS:
+	while counter < minrooms:
 		clear_matrix()
 		counter = 0
 		add_room(WIDTH/2, HEIGHT/2)
@@ -64,6 +68,8 @@ func _ready():
 	place_rooms()
 	place_objects()
 	$KI.raise()
+	print(counter)
+	print_matrix()
 
 func generate_matrix():
 	for x in range(WIDTH):
@@ -79,7 +85,7 @@ func clear_matrix():
 			matrix[y][x] = 0
 
 func add_room(var x, var y):
-	if counter < MAXROOMS:
+	if counter < maxrooms:
 		if matrix[x][y] == 0 && randf() < CHANCE - neighbour_count(x, y) * CHANCEREDUCTION * CHANCE:
 			matrix[x][y] = 1
 			counter += 1
@@ -114,13 +120,13 @@ func place(var number):
 
 func neighbour_count(var x, var y):
 	var i = 0
-	if (x > 0 && matrix[x-1][y]):
+	if (x > 0 && matrix[x-1][y] != 0):
 		i += 1
-	if (x > 0 && matrix[x-1][y]):
+	if (x < WIDTH - 1 && matrix[x+1][y] != 0):
 		i += 1
-	if (x > 0 && matrix[x-1][y]):
+	if (y > 0 && matrix[y-1][y] != 0):
 		i += 1
-	if (x > 0 && matrix[x-1][y]):
+	if (y < HEIGHT - 1 && matrix[y+1][y] != 0):
 		i += 1
 	return i
 
