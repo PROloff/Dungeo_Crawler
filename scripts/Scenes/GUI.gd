@@ -12,3 +12,12 @@ func _ready():
 func _process(delta):
 	$Keys.text = String(int(PlayerVariables.keyscollected)) + " / " + String(int(PlayerVariables.keysneeded))
 	$Score.text = "Stage: " + String(PlayerVariables.score)
+	update_minimap()
+
+func update_minimap():
+	var output = ""
+	for y in (PlayerVariables.map.size()):
+		for x in (PlayerVariables.map[0].size()):
+			output += PlayerVariables.map[x][y]
+		output += "\n"
+	$Minimap.text = output

@@ -51,6 +51,7 @@ onready var LEBEN = preload("res://scenes/Leben.tscn")
 
 func _ready():
 	generate_matrix()
+	generate_map()
 	randomize()
 	while counter < MINROOMS:
 		clear_matrix()
@@ -80,6 +81,14 @@ func generate_matrix():
 	    for y in range(HEIGHT):
 	        matrix[x].append([])
 	        matrix[x][y]=0
+
+func generate_map():
+	for x in range(WIDTH):
+	    PlayerVariables.map.append([])
+	    PlayerVariables.map[x]=[]        
+	    for y in range(HEIGHT):
+	        PlayerVariables.map[x].append([])
+	        PlayerVariables.map[x][y]=" "
 
 func clear_matrix():
 	for y in (HEIGHT):
