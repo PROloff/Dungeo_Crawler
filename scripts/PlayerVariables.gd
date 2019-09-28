@@ -7,6 +7,8 @@ var leben
 var keysneeded
 var keyscollected = 0
 
+var map = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	leben = MAXHP

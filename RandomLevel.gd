@@ -34,7 +34,7 @@ var MAXROOMS = 20
 var MINROOMS = 10
 const CHANCE = 0.8
 const KEYCOUNT = 2
-const HEARTROOMCOUNT = 3
+const HEARTROOMCOUNT = 1
 const HEARTCHANCE = 0.5
 const CHANCEREDUCTION = 0.4 #how much the chance of placing a room decreases based on the neighbour count
 const ENEMYCHANCE = 0.4
@@ -51,6 +51,7 @@ onready var LEBEN = preload("res://scenes/Leben.tscn")
 
 func _ready():
 	generate_matrix()
+	generate_map()
 	randomize()
 	while counter < MINROOMS:
 		clear_matrix()
@@ -80,6 +81,14 @@ func generate_matrix():
 	    for y in range(HEIGHT):
 	        matrix[x].append([])
 	        matrix[x][y]=0
+
+func generate_map():
+	for x in range(WIDTH):
+	    PlayerVariables.map.append([])
+	    PlayerVariables.map[x]=[]        
+	    for y in range(HEIGHT):
+	        PlayerVariables.map[x].append([])
+	        PlayerVariables.map[x][y]=" "
 
 func clear_matrix():
 	for y in (HEIGHT):

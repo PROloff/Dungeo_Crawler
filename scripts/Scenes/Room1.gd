@@ -18,3 +18,10 @@ func _get_position(var i):
 		5:
 			return $Position2D5.position
 
+
+
+func _on_VisibilityNotifier2D_screen_entered():
+	PlayerVariables.map[position.x/448][position.y/256] = "P"
+
+func _on_VisibilityNotifier2D_screen_exited():
+	PlayerVariables.map[position.x/448][position.y/256] = "0"

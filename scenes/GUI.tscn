@@ -1,15 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Scenes/GUI.gd" type="Script" id=1]
 [ext_resource path="res://fonts/FFFFORWA.TTF" type="DynamicFontData" id=2]
-
-[sub_resource type="DynamicFont" id=2]
-size = 10
-font_data = ExtResource( 2 )
+[ext_resource path="res://fonts/SourceCodePro-Regular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 5
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="GUI" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,7 +30,7 @@ margin_left = 385.878
 margin_top = 223.526
 margin_right = 425.878
 margin_bottom = 238.526
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "0/1"
 
 [node name="Score" type="Label" parent="."]
@@ -27,5 +38,15 @@ margin_left = 26.1723
 margin_top = 221.111
 margin_right = 81.1723
 margin_bottom = 236.111
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Stage: 0"
+
+[node name="Minimap" type="Label" parent="."]
+margin_left = 356.974
+margin_top = 10.1885
+margin_right = 412.974
+margin_bottom = 24.1885
+custom_fonts/font = SubResource( 3 )
+custom_constants/line_spacing = -2
+text = "Minimap
+fdsafds"
