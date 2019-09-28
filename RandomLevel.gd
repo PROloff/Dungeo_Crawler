@@ -50,6 +50,7 @@ onready var ENEMY = preload("res://scenes/Slotmachine.tscn")
 onready var LEBEN = preload("res://scenes/Leben.tscn")
 
 func _ready():
+	PlayerVariables.keyscollected = 0
 	generate_matrix()
 	generate_map()
 	randomize()
@@ -83,6 +84,8 @@ func generate_matrix():
 	        matrix[x][y]=0
 
 func generate_map():
+	var array = []
+	PlayerVariables.map = array
 	for x in range(WIDTH):
 	    PlayerVariables.map.append([])
 	    PlayerVariables.map[x]=[]        
