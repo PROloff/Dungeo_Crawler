@@ -681,3 +681,7 @@ position = Vector2( 262.946, 45.8531 )
 
 [node name="Position2D5" type="Position2D" parent="."]
 position = Vector2( 342.632, 131.562 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 228.866, 126.015 )
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
