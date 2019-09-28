@@ -15,6 +15,9 @@ func _set_Player_Position(var p):
 
 func _process(delta):
 	a = pPlayer._get_Position()
+	$Camera2D.position.x = int(a.x) - int(a.x)%448
+	$Camera2D.position.y = int(a.y) - int(a.y)%256
+	print(String($Camera2D.position.x) + " - " + String($Camera2D.position.y))
 
 func _give_Player_Position():
 	return a
