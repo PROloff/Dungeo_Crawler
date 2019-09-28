@@ -6,11 +6,10 @@ var PLAYERPOSX
 var PLAYERPOSY
 var VIEWDISTANCE = 0
 var MOVEDISTANCE = 0
-var FARDISTANCE = 256
 var SPEED = 40
 var move = Vector2(0,0)
 var life = 3
-
+var onscreen = false
 
 func _ready():
 	
@@ -19,8 +18,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	_set_Player_Position()
-	_calculate_move()
-	move_and_slide(move * SPEED)
+	if (onscreen):
+		_calculate_move()
+		move_and_slide(move * SPEED)
 	pass
 
 func _set_Player_Position():
@@ -37,7 +37,7 @@ func _calculate_move():
 	var deltaX = PLAYERPOSX - posX
 	move.x = deltaX
 	move.y = deltaY
-	if move.length() < VIEWDISTANCE || move.length() > FARDISTANCE:
+	if move.length() < VIEWDISTANCE:
 		move.x = 0
 		move.y = 0
 		$AnimatedSprite.play("idle")
@@ -65,3 +65,10 @@ func _setViewDistance(distance):
 
 func _setMoveDistance (dis):
 	MOVEDISTANCE = dis
+
+func _on_VisibilityNotifier2D_screen_entered():
+	onscreen = true
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	onscreen = false

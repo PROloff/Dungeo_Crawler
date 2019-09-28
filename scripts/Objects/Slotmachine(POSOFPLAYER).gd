@@ -29,12 +29,13 @@ func _ready():
 
 func _process(delta):
 	_set_Player_Position()
-	_calculateBulletDirection()
-	if isShooting:
-		timeSinceShoot += delta
-	if timeSinceShoot > 0.5:
-		isShooting = false;
-		timeSinceShoot = 0.0;
+	if pEnemy.onscreen:
+		_calculateBulletDirection()
+		if isShooting:
+			timeSinceShoot += delta
+		if timeSinceShoot > 0.5:
+			isShooting = false;
+			timeSinceShoot = 0.0;
 	pass
 
 func _attack():
