@@ -133,6 +133,7 @@ func update_life():
 
 func gain_key():
 	keycount += 1
+	PlayerVariables.keyscollected = keycount
 
 func has_key():
 	return keycount == PlayerVariables.keysneeded

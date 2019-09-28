@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Scenes/KI.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=3]
 
 [node name="KI" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,3 +13,5 @@ position = Vector2( 223.374, 127.65 )
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
+
+[node name="GUI" parent="Camera2D" instance=ExtResource( 3 )]
