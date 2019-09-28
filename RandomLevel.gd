@@ -91,7 +91,7 @@ func generate_map():
 	    PlayerVariables.map[x]=[]        
 	    for y in range(HEIGHT):
 	        PlayerVariables.map[x].append([])
-	        PlayerVariables.map[x][y]=" "
+	        PlayerVariables.map[x][y]= 0
 
 func clear_matrix():
 	for y in (HEIGHT):

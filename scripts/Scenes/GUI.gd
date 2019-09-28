@@ -16,8 +16,42 @@ func _process(delta):
 
 func update_minimap():
 	var output = ""
+	var outputPlayer = ""
+	var outputZiel = ""
+	var outputStart = ""
 	for y in (PlayerVariables.map.size()):
 		for x in (PlayerVariables.map[0].size()):
-			output += PlayerVariables.map[x][y]
+			match PlayerVariables.map[x][y]:
+				0:
+					output += " "
+					outputPlayer += " "
+					outputStart += " "
+					outputZiel += " "
+				1:
+					output += "0"
+					outputPlayer += " "
+					outputStart += " "
+					outputZiel += " "
+				2:
+					output += " "
+					outputPlayer += "0"
+					outputStart += " "
+					outputZiel += " "
+				3:
+					output += " "
+					outputPlayer += " "
+					outputStart += "0"
+					outputZiel += " "
+				4:
+					output += " "
+					outputPlayer += " "
+					outputStart += " "
+					outputZiel += "0"
 		output += "\n"
+		outputPlayer += "\n"
+		outputStart += "\n"
+		outputZiel += "\n"
 	$Minimap.text = output
+	$MinimapPlayer.text = outputPlayer
+	$MinimapStart.text = outputStart
+	$MinimapZiel.text = outputZiel

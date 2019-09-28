@@ -21,7 +21,7 @@ func _get_position(var i):
 
 
 func _on_VisibilityNotifier2D_screen_entered():
-	PlayerVariables.map[position.x/448][position.y/256] = "P"
+	PlayerVariables.map[position.x/448][position.y/256] = 2
 
 func _on_VisibilityNotifier2D_screen_exited():
-	PlayerVariables.map[position.x/448][position.y/256] = "0"
+	PlayerVariables.map[position.x/448][position.y/256] = 1

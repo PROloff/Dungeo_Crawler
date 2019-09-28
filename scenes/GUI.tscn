@@ -17,9 +17,9 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 5
+size = 6
 outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
+outline_color = Color( 0.196078, 0.196078, 0.196078, 1 )
 font_data = ExtResource( 3 )
 
 [node name="GUI" type="Node2D"]
@@ -47,6 +47,40 @@ margin_top = 10.1885
 margin_right = 412.974
 margin_bottom = 24.1885
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.423529, 0.423529, 0.423529, 1 )
+custom_constants/line_spacing = -2
+text = "Minimap
+fdsafds"
+
+[node name="MinimapStart" type="Label" parent="."]
+margin_left = 356.974
+margin_top = 10.1885
+margin_right = 412.974
+margin_bottom = 24.1885
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.203922, 0.2, 0.694118, 1 )
+custom_constants/line_spacing = -2
+text = "Minimap
+fdsafds"
+
+[node name="MinimapZiel" type="Label" parent="."]
+margin_left = 356.974
+margin_top = 10.1885
+margin_right = 412.974
+margin_bottom = 24.1885
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.788235, 0.0784314, 0.0784314, 1 )
+custom_constants/line_spacing = -2
+text = "Minimap
+fdsafds"
+
+[node name="MinimapPlayer" type="Label" parent="."]
+margin_left = 356.974
+margin_top = 10.1885
+margin_right = 412.974
+margin_bottom = 24.1885
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_constants/line_spacing = -2
 text = "Minimap
 fdsafds"
