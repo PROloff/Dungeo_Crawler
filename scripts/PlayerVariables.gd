@@ -31,3 +31,13 @@ func is_dead():
 func reset():
 	leben = MAXHP
 	score = 0
+
+func generate_matrix(var width, var height):
+	var matrix = []
+	for x in range(width):
+	    matrix.append([])
+	    matrix[x]=[]        
+	    for y in range(height):
+	        matrix[x].append([])
+	        matrix[x][y]=0
+	return matrix

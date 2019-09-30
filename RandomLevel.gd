@@ -51,8 +51,8 @@ onready var LEBEN = preload("res://scenes/Leben.tscn")
 
 func _ready():
 	PlayerVariables.keyscollected = 0
-	generate_matrix()
-	generate_map()
+	matrix = PlayerVariables.generate_matrix(WIDTH, HEIGHT)
+	PlayerVariables.map = PlayerVariables.generate_matrix(WIDTH, HEIGHT)
 	randomize()
 	while counter < MINROOMS:
 		clear_matrix()
@@ -75,23 +75,6 @@ func _ready():
 #	$Camera2D.adjust_camera()
 	PlayerVariables.keysneeded = KEYCOUNT
 
-func generate_matrix():
-	for x in range(WIDTH):
-	    matrix.append([])
-	    matrix[x]=[]        
-	    for y in range(HEIGHT):
-	        matrix[x].append([])
-	        matrix[x][y]=0
-
-func generate_map():
-	var array = []
-	PlayerVariables.map = array
-	for x in range(WIDTH):
-	    PlayerVariables.map.append([])
-	    PlayerVariables.map[x]=[]        
-	    for y in range(HEIGHT):
-	        PlayerVariables.map[x].append([])
-	        PlayerVariables.map[x][y]= 0
 
 func clear_matrix():
 	for y in (HEIGHT):
