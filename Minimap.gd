@@ -26,7 +26,7 @@ func generate_map():
 		for y in range(PlayerVariables.map[0].size()):
 			localmap[x].append([])
 			var room = ROOM.instance()
-			room.position.x = x*8
-			room.position.y = y*8
+			room.position.x = x*6
+			room.position.y = y*6
 			add_child(room)
 			localmap[x][y] = room

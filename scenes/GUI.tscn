@@ -36,4 +36,4 @@ custom_fonts/font = SubResource( 2 )
 text = "Stage: 0"
 
 [node name="Minimap2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 10.1932, 9.4405 )
+position = Vector2( 8, 8 )
