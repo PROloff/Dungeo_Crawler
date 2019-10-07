@@ -31,8 +31,8 @@
 [ext_resource path="res://assets/Walk/Slot_Walk2.png" type="Texture" id=29]
 [ext_resource path="res://assets/sounds/player/ChipDrop.wav" type="AudioStream" id=30]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.46713, 8.38846 )
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 5.2, -5.22, 5.21, 8.19, -6.32, 8.2, -6.3, -5.12, -0.46, -9.16 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -58,7 +58,7 @@ shape = SubResource( 1 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 22
+frame = 11
 playing = true
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]

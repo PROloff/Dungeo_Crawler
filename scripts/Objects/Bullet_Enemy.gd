@@ -10,6 +10,8 @@ func _ready():
 func _process(delta):
 	translate(move * delta * SPEED)
 	check_for_hit()
+	if !$VisibilityNotifier2D.is_on_screen():
+		queue_free()
 
 func _set_enemyPosition(var pPosition):
 	move = pPosition
