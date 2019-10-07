@@ -13,5 +13,6 @@ position = Vector2( 223.374, 127.65 )
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
+smoothing_speed = 7.0
 
 [node name="GUI" parent="Camera2D" instance=ExtResource( 3 )]
