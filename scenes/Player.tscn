@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/Objects/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Character/Idle/Idle1.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://assets/sounds/Sieht man das ICED OUT.wav" type="AudioStream" id=22]
 [ext_resource path="res://assets/sounds/Soundtrack.wav" type="AudioStream" id=23]
 [ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/light.png" type="Texture" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.71314, 6.54097 )
@@ -61,7 +62,7 @@ position = Vector2( 5.02, 3.56 )
 position = Vector2( 0.0750465, 0 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Punch" parent="." instance=ExtResource( 17 )]
@@ -93,3 +94,8 @@ zoom = Vector2( 1.5, 1.5 )
 
 [node name="BulletHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 24 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+texture = ExtResource( 25 )
+shadow_enabled = true
