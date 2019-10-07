@@ -126,9 +126,7 @@ func gain_life():
 	update_life()
 
 func update_life():
-	var life = PlayerVariables.leben
-	$AnimatedSprite2.frame = life
-	if life == 0:
+	if PlayerVariables.leben == 0:
 		get_tree().change_scene("res://scenes/End Screen.tscn")
 
 func gain_key():

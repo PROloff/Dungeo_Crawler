@@ -12,3 +12,4 @@ func _ready():
 func _process(delta):
 	$Keys.text = String(int(PlayerVariables.keyscollected)) + " / " + String(int(PlayerVariables.keysneeded))
 	$Score.text = "Stage: " + String(PlayerVariables.score)
+	$Hearts.frame = PlayerVariables.leben

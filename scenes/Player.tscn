@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scripts/Objects/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Character/Idle/Idle1.png" type="Texture" id=2]
@@ -23,13 +23,7 @@
 [ext_resource path="res://assets/sounds/player/Running.wav" type="AudioStream" id=21]
 [ext_resource path="res://assets/sounds/Sieht man das ICED OUT.wav" type="AudioStream" id=22]
 [ext_resource path="res://assets/sounds/Soundtrack.wav" type="AudioStream" id=23]
-[ext_resource path="res://assets/hearts/Hearts6.png" type="Texture" id=24]
-[ext_resource path="res://assets/hearts/Hearts5.png" type="Texture" id=25]
-[ext_resource path="res://assets/hearts/Hearts4.png" type="Texture" id=26]
-[ext_resource path="res://assets/hearts/Hearts3.png" type="Texture" id=27]
-[ext_resource path="res://assets/hearts/Hearts2.png" type="Texture" id=28]
-[ext_resource path="res://assets/hearts/Hearts1.png" type="Texture" id=29]
-[ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/sounds/BilliardHit.wav" type="AudioStream" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.71314, 6.54097 )
@@ -52,14 +46,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0.00223923, 0.0122089 )
 script = ExtResource( 1 )
@@ -75,7 +61,7 @@ position = Vector2( 5.02, 3.56 )
 position = Vector2( 0.0750465, 0 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 4
+frame = 2
 playing = true
 
 [node name="Punch" parent="." instance=ExtResource( 17 )]
@@ -102,13 +88,8 @@ stream = ExtResource( 22 )
 [node name="Background" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( -0.477355, -16.8153 )
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 3 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="BulletHit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 30 )
+stream = ExtResource( 24 )
